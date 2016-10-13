@@ -74,6 +74,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="DEARPORK" type="application/atom+xml" />
+
 
 
 
@@ -272,6 +274,111 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/13/algorithm-sort/" itemprop="url">
+                  一些排序算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-13T15:31:09+08:00" content="2016-10-13">
+              2016-10-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/13/algorithm-sort/" class="leancloud_visitors" data-flag-title="一些排序算法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="排序算法汇总"><a href="#排序算法汇总" class="headerlink" title="排序算法汇总"></a>排序算法汇总</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/13/algorithm-sort/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/12/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -294,13 +401,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/12/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/12/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
             
           
 
@@ -331,14 +431,12 @@
 
       
         
-          
-            <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>昨天4399的面试经历让我意识到企业需要的应届生是什么样子的，平心而论玩轮子十分简单，语言基础还是要好好打，不要下次突然被问到指针和引用的区别一脸懵逼。</p>
-<p>纪念一下猝不及防让写的二分查找，由于脑袋一片空白写了一个递归，回家发现居然写对了，感觉自己还是有一点….天赋？不过也是时候把常用算法搞一遍了。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearchRecursion</span><span class="params">(<span class="keyword">int</span> arry[],<span class="keyword">int</span> value,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(low&gt;high)</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> mid=low+(high-low)/<span class="number">2</span>;</div><div class="line">    <span class="keyword">if</span>(arry[mid]==value)</div><div class="line">        <span class="keyword">return</span> mid;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(value&lt;arry[mid])</div><div class="line">        <span class="keyword">return</span>    BinarySearchRecursion(arry,value,low,mid<span class="number">-1</span>);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span>    BinarySearchRecursion(arry,value,mid+<span class="number">1</span>,high);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>看了一个下午又瞎又饿，刚开始用MD，感觉还行，插件将后续装上。<br>路漫漫其修远兮~</p>
-
-          
+          <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/12/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -406,7 +504,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -416,7 +514,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -425,8 +523,44 @@
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/usey95" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github-square"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/surepork" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/76950838/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-gittip"></i>
+                  
+                  Douban
+                </a>
+              </span>
+            
           
         </div>
 
@@ -544,30 +678,9 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"dearpork"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
 
 
 

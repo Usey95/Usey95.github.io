@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DEARPORK</title>
+  <subtitle>Getting Started.</subtitle>
+  <link href="/atom.xml" rel="self"/>
   
+  <link href="http://yoursite.com/"/>
+  <updated>2016-10-13T14:00:48.238Z</updated>
+  <id>http://yoursite.com/</id>
   
+  <author>
+    <name>DEARPORK</name>
     
-    <entry>
-      <title><![CDATA[一些排序算法]]></title>
-      <url>http://yoursite.com/2016/10/13/algorithm-sort/</url>
-      <content type="html"><![CDATA[<h2 id="排序算法汇总"><a href="#排序算法汇总" class="headerlink" title="排序算法汇总"></a>排序算法汇总</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> SelectionSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		int min = i;</div><div class="line">		<span class="keyword">for</span>(int j = i + <span class="number">1</span>;j &lt; n - <span class="number">1</span>;j++)</div><div class="line">			<span class="keyword">if</span>(a[min] &gt; a[j]) min = j;</div><div class="line">		swap(a[min],a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些排序算法</title>
+    <link href="http://yoursite.com/2016/10/13/algorithm-sort/"/>
+    <id>http://yoursite.com/2016/10/13/algorithm-sort/</id>
+    <published>2016-10-13T07:31:09.000Z</published>
+    <updated>2016-10-13T14:00:48.238Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="排序算法汇总"><a href="#排序算法汇总" class="headerlink" title="排序算法汇总"></a>排序算法汇总</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> SelectionSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		int min = i;</div><div class="line">		<span class="keyword">for</span>(int j = i + <span class="number">1</span>;j &lt; n - <span class="number">1</span>;j++)</div><div class="line">			<span class="keyword">if</span>(a[min] &gt; a[j]) min = j;</div><div class="line">		swap(a[min],a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法思想：对有n个元素的序列进行n-1趟排序，相邻元素逆序则交换。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> BubbleSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n<span class="number">-1</span>;i++)&#123;</div><div class="line">		<span class="comment">//改进算法，如果一趟未逆序则已经有序</span></div><div class="line">		<span class="comment">//bool exchange = true;</span></div><div class="line">		<span class="keyword">for</span>(int j = <span class="number">0</span>;j &lt; n-i<span class="number">-1</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(a[j + <span class="number">1</span>] &lt; a[j])&#123;</div><div class="line">				swap(a[j],a[j + <span class="number">1</span>]);</div><div class="line">				<span class="comment">//exchange = false;</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(exchange)&#123;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>算法思想：将数据插入已经排好序的有序数据中，本质上属于减治策略。</p>
 <blockquote>
@@ -23,20 +39,42 @@
 <p>写了差不多三分之一的样子，我要去跑步了，我再不跑步可能就要死了，明天再更新下，嗯我也不知道我在自言自语什么东西，但是今天遇到一个宇宙BUG，我要拿框框记下来。</p>
 <blockquote><p>当遇到百思不得其解的编译错误，试下把tab换成四下空格，对的没错就是这么无解。</p>
 <footer><strong>Yucheng Fang</strong><cite>Bug log</cite></footer></blockquote>]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/10/12/hello-world/</url>
-      <content type="html"><![CDATA[<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。</p>
+    <summary type="html">
+    
+      &lt;h2 id=&quot;排序算法汇总&quot;&gt;&lt;a href=&quot;#排序算法汇总&quot; class=&quot;headerlink&quot; title=&quot;排序算法汇总&quot;&gt;&lt;/a&gt;排序算法汇总&lt;/h2&gt;&lt;h3 id=&quot;选择排序&quot;&gt;&lt;a href=&quot;#选择排序&quot; class=&quot;headerlink&quot; title=&quot;选择排序&quot;&gt;&lt;/a&gt;选择排序&lt;/h3&gt;&lt;p&gt;算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/10/12/hello-world/"/>
+    <id>http://yoursite.com/2016/10/12/hello-world/</id>
+    <published>2016-10-12T05:43:07.758Z</published>
+    <updated>2016-10-13T13:27:44.611Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。</p>
 <a id="more"></a>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>昨天4399的面试经历让我意识到企业需要的应届生是什么样子的，平心而论玩轮子十分简单，语言基础还是要好好打，不要下次突然被问到指针和引用的区别一脸懵逼。</p>
 <p>纪念一下猝不及防让写的二分查找，由于脑袋一片空白写了一个递归，回家发现居然写对了，感觉自己还是有一点….天赋？不过也是时候把常用算法搞一遍了。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearchRecursion</span><span class="params">(<span class="keyword">int</span> arry[],<span class="keyword">int</span> value,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(low&gt;high)</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> mid=low+(high-low)/<span class="number">2</span>;</div><div class="line">    <span class="keyword">if</span>(arry[mid]==value)</div><div class="line">        <span class="keyword">return</span> mid;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(value&lt;arry[mid])</div><div class="line">        <span class="keyword">return</span>    BinarySearchRecursion(arry,value,low,mid<span class="number">-1</span>);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span>    BinarySearchRecursion(arry,value,mid+<span class="number">1</span>,high);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>看了一个下午又瞎又饿，刚开始用MD，感觉还行，插件将后续装上。<br>路漫漫其修远兮~</p>
 ]]></content>
-    </entry>
     
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Getting-Started&quot;&gt;&lt;a href=&quot;#Getting-Started&quot; class=&quot;headerlink&quot; title=&quot;Getting Started&quot;&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;&lt;h3 id=&quot;反思&quot;&gt;&lt;a href=&quot;#反思&quot; class=&quot;headerlink&quot; title=&quot;反思&quot;&gt;&lt;/a&gt;反思&lt;/h3&gt;&lt;p&gt;过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="http://yoursite.com/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
   
-  
-</search>
+</feed>
