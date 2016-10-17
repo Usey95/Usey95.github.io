@@ -274,6 +274,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/17/css-1/" itemprop="url">
+                  多余部分省略为点点点
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-17T23:06:19+08:00" content="2016-10-17">
+              2016-10-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/17/css-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/css-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/17/css-1/" class="leancloud_visitors" data-flag-title="多余部分省略为点点点">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="多余部分省略解决方案"><a href="#多余部分省略解决方案" class="headerlink" title="多余部分省略解决方案"></a>多余部分省略解决方案</h2><p>今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。</p>
+<h3 id="单行"><a href="#单行" class="headerlink" title="单行"></a>单行</h3><p>CSS就能实现，挺简单的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.test&#123;</div><div class="line">		<span class="attr">width</span>: <span class="number">50</span>px;</div><div class="line">		overflow: hidden;</div><div class="line">		text-overflow: ellipsis;</div><div class="line">		white-space: nowrap;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="WebKit浏览器或移动端的页面"><a href="#WebKit浏览器或移动端的页面" class="headerlink" title="WebKit浏览器或移动端的页面"></a>WebKit浏览器或移动端的页面</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.test&#123;</div><div class="line">		<span class="attr">overflow</span> : hidden;</div><div class="line">		text-overflow: ellipsis;</div><div class="line">		display: -webkit-box;</div><div class="line">		-webkit-line-clamp: <span class="number">2</span>;</div><div class="line">		-webkit-box-orient: vertical;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="跨浏览器兼容方案"><a href="#跨浏览器兼容方案" class="headerlink" title="跨浏览器兼容方案"></a>跨浏览器兼容方案</h3><p>比较靠谱简单的做法就是设置相对定位的容器高度，用包含省略号(…)的元素模拟实现<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    <span class="attr">position</span>:relative;</div><div class="line">    line-height:<span class="number">1.4</span>em;</div><div class="line">    <span class="comment">/* 3 times the line-height to show 3 lines */</span></div><div class="line">    height:<span class="number">4.2</span>em;</div><div class="line">    overflow:hidden;</div><div class="line">&#125;</div><div class="line">p::after &#123;</div><div class="line">    <span class="attr">content</span>:<span class="string">"..."</span>;</div><div class="line">    font-weight:bold;</div><div class="line">    position:absolute;</div><div class="line">    bottom:<span class="number">0</span>;</div><div class="line">    right:<span class="number">0</span>;</div><div class="line">    padding:<span class="number">0</span> <span class="number">20</span>px <span class="number">1</span>px <span class="number">45</span>px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="黑科技"><a href="#黑科技" class="headerlink" title="黑科技"></a>黑科技</h3><p>插件<a href="http://dotdotdot.frebsite.nl" target="_blank" rel="external">jQuery.dotdotdot</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	$(<span class="string">"#wrapper"</span>).dotdotdot(&#123;</div><div class="line">		<span class="comment">//	configuration goes here</span></div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><p>转自<a href="http://blog.csdn.net/fanhu6816/article/details/52063758" target="_blank" rel="external">博客</a>，有更为详细的总结</p>
+<h2 id="明天要做的事情"><a href="#明天要做的事情" class="headerlink" title="明天要做的事情"></a>明天要做的事情</h2><ul>
+<li>信息安全小测</li>
+<li>研究Express框架</li>
+<li>总结SEO、分页相关知识</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/13/algorithm-sort/" itemprop="url">
                   一些排序算法
                 </a>
@@ -518,7 +638,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -528,7 +648,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
