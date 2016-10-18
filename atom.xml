@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-17T15:20:03.656Z</updated>
+  <updated>2016-10-18T13:17:05.548Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,86 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>js引用类型--Array</title>
+    <link href="http://yoursite.com/2016/10/18/js-1/"/>
+    <id>http://yoursite.com/2016/10/18/js-1/</id>
+    <published>2016-10-18T11:28:43.000Z</published>
+    <updated>2016-10-18T13:17:05.548Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><blockquote>
+<p>今天上课总结的js引用类型Array，标准是ECMA5，至于为什么，因为我看的书就是讲ECMA5的啊。</p>
+</blockquote>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>一维数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//new可以省略</span></div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">           = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">20</span>);   <span class="comment">//长度为20</span></div><div class="line">           = <span class="keyword">new</span> <span class="built_in">Array</span>([<span class="number">20</span>]);  <span class="comment">//含一项，第一项为20</span></div><div class="line">           = [<span class="string">"red"</span>,<span class="string">"green"</span>];</div><div class="line">           = [<span class="number">1</span>,<span class="number">2</span>,];        <span class="comment">//不推荐，IE为三项，第三项为undefined</span></div></pre></td></tr></table></figure></p>
+<p>多维数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//先创建一个一维数组，然后该一维数组的所有成员再创建一维数据</span></div><div class="line"><span class="keyword">var</span> persons = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line">persons[<span class="number">0</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">persons[<span class="number">1</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">persons[<span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line">persons[<span class="number">0</span>][<span class="number">0</span>] = <span class="string">"zhangsan"</span>;</div><div class="line">persons[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">25</span>;</div><div class="line">persons[<span class="number">1</span>][<span class="number">0</span>] = <span class="string">"lisi"</span>;</div><div class="line">persons[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">22</span>;</div><div class="line">persons[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">"wangwu"</span>;</div><div class="line">persons[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">32</span>;</div><div class="line">persons[<span class="number">0</span>] = [<span class="string">"zhangsan"</span>, <span class="number">25</span>];</div><div class="line">persons[<span class="number">1</span>] = [<span class="string">"lisi"</span>, <span class="number">21</span>];</div><div class="line">persons[<span class="number">2</span>] = [<span class="string">"wangwu"</span>, <span class="number">32</span>];</div><div class="line"></div><div class="line"><span class="comment">//length值为一维数组长度</span></div><div class="line"></div><div class="line"><span class="comment">//第二种写法</span></div><div class="line"><span class="keyword">var</span> persons = [[<span class="string">"zhangsan"</span>, <span class="number">25</span>], [<span class="string">"lisi"</span>, <span class="number">21</span>], [<span class="string">"wangwu"</span>, <span class="number">32</span>]];</div></pre></td></tr></table></figure></p>
+<p>*利用length可以在末尾添加新项，length值为最后索引值加1，中间空值会被定义为undefined</p>
+<h3 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h3><ul>
+<li>Array.isArray()   //建议使用</li>
+<li>value instanceof Array   //可能因为页面有框架产生作用域问题</li>
+</ul>
+<h3 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</div><div class="line">alert(colors.toString());  <span class="comment">//red,blue,green 字符串</span></div><div class="line">alert(colors.valueOf());   <span class="comment">//red,blue,green 返回的是数组</span></div><div class="line">alert(colors);             <span class="comment">//red,blue,green 字符串，隐式调用toString()</span></div><div class="line"><span class="comment">//还有一个toLocaleString()方法，调用每一项的toLocaleString()方法</span></div><div class="line"><span class="comment">//验证的话，重写每个Array的toLocaleString()、toString()方法就可以看出来了</span></div><div class="line">alert(colors.join(<span class="string">","</span>));   <span class="comment">//red,blue,green 如果某项为空则为空字符串</span></div></pre></td></tr></table></figure>
+<h3 id="栈、队列方法"><a href="#栈、队列方法" class="headerlink" title="栈、队列方法"></a>栈、队列方法</h3><ul>
+<li>pop()</li>
+<li>push()</li>
+<li>shift()</li>
+<li>unshift()</li>
+</ul>
+<h3 id="重排序方法"><a href="#重排序方法" class="headerlink" title="重排序方法"></a>重排序方法</h3><ul>
+<li>reverse()</li>
+<li>sort()</li>
+</ul>
+<h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><ul>
+<li>slice()</li>
+<li>splice()</li>
+<li>concat()，基于当前数组中的所有项创建一个新数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"green"</span>];</div><div class="line"><span class="keyword">var</span> colors2 = colors.concat(<span class="string">"yellow"</span>,[<span class="string">"black"</span>,<span class="string">"brown"</span>]);</div><div class="line"><span class="comment">//red,green,blue,yellow,black,brown 空则为复制</span></div></pre></td></tr></table></figure>
+<h3 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h3><ul>
+<li>indexOf()</li>
+<li>lastIndexOf() //正逆序查找，严格相等，传参key，起始位置</li>
+</ul>
+<h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>every()</th>
+<th>filter()</th>
+<th>forEach()</th>
+<th>map()</th>
+<th>some()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>返回值</td>
+<td>bool</td>
+<td>true结果Array</td>
+<td>无</td>
+<td>操作结果Array</td>
+<td>bool</td>
+</tr>
+</tbody>
+</table>
+<h3 id="归并方法"><a href="#归并方法" class="headerlink" title="归并方法"></a>归并方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//reduce(),reduceRight() 迭代数组所有项</span></div><div class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> sum = values.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur,index,array</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> prev + cur;</div><div class="line">&#125;);</div><div class="line">alert(sum);<span class="comment">//15</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;今天上课总结的js引用类型Array，标准是ECMA5，至于为什么，因为我看的书就是讲EC
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>多余部分省略为点点点</title>
     <link href="http://yoursite.com/2016/10/17/css-1/"/>
     <id>http://yoursite.com/2016/10/17/css-1/</id>
     <published>2016-10-17T15:06:19.000Z</published>
-    <updated>2016-10-17T15:20:03.656Z</updated>
+    <updated>2016-10-17T15:23:43.993Z</updated>
     
     <content type="html"><![CDATA[<h2 id="多余部分省略解决方案"><a href="#多余部分省略解决方案" class="headerlink" title="多余部分省略解决方案"></a>多余部分省略解决方案</h2><p>今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。</p>
 <h3 id="单行"><a href="#单行" class="headerlink" title="单行"></a>单行</h3><p>CSS就能实现，挺简单的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.test&#123;</div><div class="line">		<span class="attr">width</span>: <span class="number">50</span>px;</div><div class="line">		overflow: hidden;</div><div class="line">		text-overflow: ellipsis;</div><div class="line">		white-space: nowrap;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
