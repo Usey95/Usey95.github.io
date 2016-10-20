@@ -89,7 +89,7 @@
 <meta name="description" content="Function
 今天总结js引用类型Function，标准依然是ECMA5。
 
-构造123456789101112function sum(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;var sum = function(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;;var sum = new Function(&quot;n">
+构造1234567891011function sum(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;var sum = function(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;;var sum = new Function(&quot;num">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js引用类型--Function">
 <meta property="og:url" content="http://yoursite.com/2016/10/19/js-2/index.html">
@@ -97,14 +97,14 @@
 <meta property="og:description" content="Function
 今天总结js引用类型Function，标准依然是ECMA5。
 
-构造123456789101112function sum(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;var sum = function(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;;var sum = new Function(&quot;n">
-<meta property="og:updated_time" content="2016-10-19T11:22:34.494Z">
+构造1234567891011function sum(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;var sum = function(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;;var sum = new Function(&quot;num">
+<meta property="og:updated_time" content="2016-10-20T10:59:00.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js引用类型--Function">
 <meta name="twitter:description" content="Function
 今天总结js引用类型Function，标准依然是ECMA5。
 
-构造123456789101112function sum(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;var sum = function(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;;var sum = new Function(&quot;n">
+构造1234567891011function sum(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;var sum = function(num1,num2)&amp;#123;	return num1 + num2;&amp;#125;;var sum = new Function(&quot;num">
 
 
 
@@ -340,7 +340,8 @@
         <h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><blockquote>
 <p>今天总结js引用类型Function，标准依然是ECMA5。</p>
 </blockquote>
-<h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sum = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"num1"</span>,<span class="string">"num2"</span>,<span class="string">"return num1 + num2"</span>);</div><div class="line"><span class="comment">//最后一个参数始终被看成是函数体</span></div><div class="line"><span class="comment">//不推荐，会两次解析代码。</span></div><div class="line">&lt;!--more--&gt;</div></pre></td></tr></table></figure>
+<h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sum = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"num1"</span>,<span class="string">"num2"</span>,<span class="string">"return num1 + num2"</span>);</div><div class="line"><span class="comment">//最后一个参数始终被看成是函数体</span></div><div class="line"><span class="comment">//不推荐，会两次解析代码。</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>函数名其实仅仅为指向函数的指针：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line">alert(sum(<span class="number">10</span>,<span class="number">10</span>)); <span class="comment">//20</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> anotherSum = sum;</div><div class="line">alert(sum(<span class="number">10</span>,<span class="number">10</span>)); <span class="comment">//20</span></div><div class="line"></div><div class="line">sum = <span class="literal">null</span>;</div><div class="line">alert(anotherSum(<span class="number">10</span>,<span class="number">10</span>)); <span class="comment">//20</span></div></pre></td></tr></table></figure></p>
 <h3 id="没有重载"><a href="#没有重载" class="headerlink" title="没有重载"></a>没有重载</h3><p>由于函数名仅仅为指向函数的指针，所以很好理解为什么js没有重载的概念。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addSomeNumber</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num + <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addSomeNumber</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num + <span class="number">200</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = addSomeNumber(<span class="number">100</span>); <span class="comment">//300</span></div></pre></td></tr></table></figure></p>
 <h3 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h3><p>解析器在向执行环境中加载数据的时候，会先读取函数声明，并使其在执行任何代码之前可用（function declaration hoisting,函数声明提升），至于函数表达式，则必须等到解析器执行到它所在的代码行才会真正被解释执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">alert(sum(<span class="number">10</span>,<span class="number">10</span>));</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;   <span class="comment">//正确</span></div><div class="line"></div><div class="line">alert(sum(<span class="number">10</span>,<span class="number">10</span>));</div><div class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;   <span class="comment">//unexpected identifier，函数表达式被解析器执行到代码行才执行，所以声明未提前。</span></div></pre></td></tr></table></figure></p>
@@ -414,6 +415,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/10/20/work-1/" rel="prev" title="飞鱼笔试以及零散总结">
+                飞鱼笔试以及零散总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -484,7 +489,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
