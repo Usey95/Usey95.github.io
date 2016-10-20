@@ -87,21 +87,18 @@
 
 
 <meta name="description" content="多余部分省略解决方案今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。
-单行CSS就能实现，挺简单的：123456.test&amp;#123;		width: 50px;		overflow: hidden;		text-overflow: ellipsis;		white-space: nowrap;	&amp;#125;
-WebKit浏览器或移动端的页面1234567.test&amp;#123;		overf">
+单行CSS就能实现，挺简单的：123456.test&amp;#123;		width: 50px;		overflow: hidden;		text-overflow: ellipsis;		white-space: nowrap;	&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多余部分省略为点点点">
 <meta property="og:url" content="http://yoursite.com/2016/10/17/css-1/index.html">
 <meta property="og:site_name" content="DEARPORK">
 <meta property="og:description" content="多余部分省略解决方案今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。
-单行CSS就能实现，挺简单的：123456.test&amp;#123;		width: 50px;		overflow: hidden;		text-overflow: ellipsis;		white-space: nowrap;	&amp;#125;
-WebKit浏览器或移动端的页面1234567.test&amp;#123;		overf">
-<meta property="og:updated_time" content="2016-10-17T15:23:43.993Z">
+单行CSS就能实现，挺简单的：123456.test&amp;#123;		width: 50px;		overflow: hidden;		text-overflow: ellipsis;		white-space: nowrap;	&amp;#125;">
+<meta property="og:updated_time" content="2016-10-19T10:41:24.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多余部分省略为点点点">
 <meta name="twitter:description" content="多余部分省略解决方案今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。
-单行CSS就能实现，挺简单的：123456.test&amp;#123;		width: 50px;		overflow: hidden;		text-overflow: ellipsis;		white-space: nowrap;	&amp;#125;
-WebKit浏览器或移动端的页面1234567.test&amp;#123;		overf">
+单行CSS就能实现，挺简单的：123456.test&amp;#123;		width: 50px;		overflow: hidden;		text-overflow: ellipsis;		white-space: nowrap;	&amp;#125;">
 
 
 
@@ -336,6 +333,7 @@ WebKit浏览器或移动端的页面1234567.test&amp;#123;		overf">
       
         <h2 id="多余部分省略解决方案"><a href="#多余部分省略解决方案" class="headerlink" title="多余部分省略解决方案"></a>多余部分省略解决方案</h2><p>今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。</p>
 <h3 id="单行"><a href="#单行" class="headerlink" title="单行"></a>单行</h3><p>CSS就能实现，挺简单的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.test&#123;</div><div class="line">		<span class="attr">width</span>: <span class="number">50</span>px;</div><div class="line">		overflow: hidden;</div><div class="line">		text-overflow: ellipsis;</div><div class="line">		white-space: nowrap;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h3 id="WebKit浏览器或移动端的页面"><a href="#WebKit浏览器或移动端的页面" class="headerlink" title="WebKit浏览器或移动端的页面"></a>WebKit浏览器或移动端的页面</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.test&#123;</div><div class="line">		<span class="attr">overflow</span> : hidden;</div><div class="line">		text-overflow: ellipsis;</div><div class="line">		display: -webkit-box;</div><div class="line">		-webkit-line-clamp: <span class="number">2</span>;</div><div class="line">		-webkit-box-orient: vertical;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
 <h3 id="跨浏览器兼容方案"><a href="#跨浏览器兼容方案" class="headerlink" title="跨浏览器兼容方案"></a>跨浏览器兼容方案</h3><p>比较靠谱简单的做法就是设置相对定位的容器高度，用包含省略号(…)的元素模拟实现<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    <span class="attr">position</span>:relative;</div><div class="line">    line-height:<span class="number">1.4</span>em;</div><div class="line">    <span class="comment">/* 3 times the line-height to show 3 lines */</span></div><div class="line">    height:<span class="number">4.2</span>em;</div><div class="line">    overflow:hidden;</div><div class="line">&#125;</div><div class="line">p::after &#123;</div><div class="line">    <span class="attr">content</span>:<span class="string">"..."</span>;</div><div class="line">    font-weight:bold;</div><div class="line">    position:absolute;</div><div class="line">    bottom:<span class="number">0</span>;</div><div class="line">    right:<span class="number">0</span>;</div><div class="line">    padding:<span class="number">0</span> <span class="number">20</span>px <span class="number">1</span>px <span class="number">45</span>px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="黑科技"><a href="#黑科技" class="headerlink" title="黑科技"></a>黑科技</h3><p>插件<a href="http://dotdotdot.frebsite.nl" target="_blank" rel="external">jQuery.dotdotdot</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	$(<span class="string">"#wrapper"</span>).dotdotdot(&#123;</div><div class="line">		<span class="comment">//	configuration goes here</span></div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
@@ -458,7 +456,7 @@ WebKit浏览器或移动端的页面1234567.test&amp;#123;		overf">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
