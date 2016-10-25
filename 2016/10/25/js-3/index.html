@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="基础," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -86,19 +86,25 @@
 
 
 
-<meta name="description" content="位操作实现abs12345var num = -120;function abs(num) &amp;#123;	return num*(1-((num&amp;gt;&amp;gt;&amp;gt;31)&amp;lt;&amp;lt;1));&amp;#125;console.log(abs(num));//120
-递归实现数组求和123function sum(a,n) &amp;#123;	return (n===0)?0:sum(a[n-1],n-1">
+<meta name="description" content="概念
+闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
+
+12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
 <meta property="og:type" content="article">
-<meta property="og:title" content="飞鱼笔试以及零散总结">
-<meta property="og:url" content="http://yoursite.com/2016/10/20/work-1/index.html">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://yoursite.com/2016/10/25/js-3/index.html">
 <meta property="og:site_name" content="DEARPORK">
-<meta property="og:description" content="位操作实现abs12345var num = -120;function abs(num) &amp;#123;	return num*(1-((num&amp;gt;&amp;gt;&amp;gt;31)&amp;lt;&amp;lt;1));&amp;#125;console.log(abs(num));//120
-递归实现数组求和123function sum(a,n) &amp;#123;	return (n===0)?0:sum(a[n-1],n-1">
-<meta property="og:updated_time" content="2016-10-20T12:57:22.448Z">
+<meta property="og:description" content="概念
+闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
+
+12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
+<meta property="og:updated_time" content="2016-10-25T13:27:40.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞鱼笔试以及零散总结">
-<meta name="twitter:description" content="位操作实现abs12345var num = -120;function abs(num) &amp;#123;	return num*(1-((num&amp;gt;&amp;gt;&amp;gt;31)&amp;lt;&amp;lt;1));&amp;#125;console.log(abs(num));//120
-递归实现数组求和123function sum(a,n) &amp;#123;	return (n===0)?0:sum(a[n-1],n-1">
+<meta name="twitter:title" content="闭包">
+<meta name="twitter:description" content="概念
+闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
+
+12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
 
 
 
@@ -119,10 +125,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/20/work-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/25/js-3/"/>
 
 
-  <title> 飞鱼笔试以及零散总结 | DEARPORK </title>
+  <title> 闭包 | DEARPORK </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="en">
@@ -275,7 +281,7 @@
             
             
               
-                飞鱼笔试以及零散总结
+                闭包
               
             
           </h1>
@@ -287,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-20T19:27:24+08:00" content="2016-10-20">
-              2016-10-20
+            <time itemprop="dateCreated" datetime="2016-10-25T14:48:09+08:00" content="2016-10-25">
+              2016-10-25
             </time>
           </span>
 
@@ -298,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/20/work-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/20/work-1/" itemprop="commentsCount"></span>
+                <a href="/2016/10/25/js-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/25/js-3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -309,7 +315,7 @@
 
           
           
-             <span id="/2016/10/20/work-1/" class="leancloud_visitors" data-flag-title="飞鱼笔试以及零散总结">
+             <span id="/2016/10/25/js-3/" class="leancloud_visitors" data-flag-title="闭包">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,24 +337,35 @@
       
 
       
-        <h3 id="位操作实现abs"><a href="#位操作实现abs" class="headerlink" title="位操作实现abs"></a>位操作实现abs</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">-120</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> num*(<span class="number">1</span>-((num&gt;&gt;&gt;<span class="number">31</span>)&lt;&lt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(abs(num));<span class="comment">//120</span></div></pre></td></tr></table></figure>
-<h3 id="递归实现数组求和"><a href="#递归实现数组求和" class="headerlink" title="递归实现数组求和"></a>递归实现数组求和</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,n</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> (n===<span class="number">0</span>)?<span class="number">0</span>:sum(a[n<span class="number">-1</span>],n<span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="一个未解决的"><a href="#一个未解决的" class="headerlink" title="一个未解决的"></a>一个未解决的</h3><p>#define six 2*3 和#define six 2 * 3有没有区别？<br>暂时想不到</p>
-<h3 id="js加载"><a href="#js加载" class="headerlink" title="js加载"></a>js加载</h3><ul>
-<li><p>同步加载 又称阻塞模式，会阻止浏览器的后续处理，停止了后续的解析，因此停止了后续的文件加载（如图像）、渲染、代码执行。<br>js 之所以要同步执行，是因为 js 中可能有输出 document内容、修改dom、重定向等行为，所以默认同步执行才是安全的。<br>以前的一般建议是把script放在页面末尾body之前，这样尽可能减少这种阻塞行为，而先让页面展示出来。<br>简单说：加载的网络 timeline 是瀑布模型，而异步加载的 timeline 是并发模型。</p>
-</li>
-<li><p>异步加载 它允许无阻塞资源加载，并且使 onload 启动更快，允许页面内容加载，而不需要刷新页面，也可以根据页面内容延迟加载依赖。</p>
-</li>
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparisonFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">	<span class="comment">//匿名函数可以访问propertyName</span></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="keyword">if</span> (value1 &lt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="彻底理解闭包—-作用域链"><a href="#彻底理解闭包—-作用域链" class="headerlink" title="彻底理解闭包—-作用域链"></a>彻底理解闭包—-作用域链</h3><ul>
+<li>当某个函数被调用时，会创建一个执行环境（execution context）及相应的作用域链。</li>
+<li>然后，使用arguments 和其他命名参数的值来初始化函数的活动对象（activation object）。</li>
+<li>但在作用域链中，外部函数的活动对象始终处于第二位，外部函数的外部函数的活动对象处于第三位，……直至作为作用域链终点的全局执行环境。</li>
+<li>在函数执行过程中，为读取和写入变量的值，就需要在作用域链中查找变量。</li>
 </ul>
-<ol>
-<li><p>动态创建</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">     <span class="keyword">var</span> s = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);  </div><div class="line">     s.type = <span class="string">'text/javascript'</span>;  </div><div class="line">     s.async = <span class="literal">true</span>;  </div><div class="line">     s.src = <span class="string">'http://yourdomain.com/script.js'</span>;  </div><div class="line">     <span class="keyword">var</span> x = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];  </div><div class="line">     x.parentNode.insertBefore(s, x);  </div><div class="line"> &#125;)();</div></pre></td></tr></table></figure>
-</li>
-<li><p>html5 async属性</p>
-</li>
-<li>onload加载，与第一种类似</li>
-</ol>
+<p>例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> (value1 &lt; value2)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">	&#125; </div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result = compare(<span class="number">5</span>, <span class="number">10</span>);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>以上代码先定义了compare()函数，然后又在全局作用域中调用了它。当调用compare()时，会<br>创建一个包含arguments、value1 和value2 的活动对象。</li>
+<li>全局执行环境的变量对象（包含result和compare）在compare()执行环境的作用域链中则处于第二位。</li>
+<li>后台的每个执行环境都有一个表示变量的对象—变量对象。全局环境的变量对象始终存在，而像<br>compare()函数这样的局部环境的变量对象，则只在函数执行的过程中存在。在创建compare()函数<br>时，会创建一个预先包含全局变量对象的作用域链，这个作用域链被保存在内部的[[Scope]]属性中。</li>
+<li>当调用compare()函数时，会为函数创建一个执行环境，然后通过复制函数的[[Scope]]属性中的对象构建起执行环境的作用域链。</li>
+<li>此后，又有一个活动对象（在此作为变量对象使用）被创建并被推入执行环境作用域链的前端。</li>
+<li>对于这个例子中compare()函数的执行环境而言，其作用域链中包含两个变量对象：本地活动对象和全局变量对象。</li>
+</ul>
+<p>啰嗦一大堆的结论：<strong>作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</strong>无论什么时候在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。一般来讲，<br>当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。</p>
+<h3 id="回到闭包"><a href="#回到闭包" class="headerlink" title="回到闭包"></a>回到闭包</h3><p>我还是直接贴一些闭包吧，讲起来有点费劲。简单的说就是内部函数在定义他的作用域的外部被引用，就创建了该内部函数的闭包。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello2</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> text = <span class="string">'Hello '</span> + name; <span class="comment">// Local variable</span></div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(text); &#125;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> say2 = sayHello2(<span class="string">'Bob'</span>);</div><div class="line">say2(); <span class="comment">// logs "Hello Bob"</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say667</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Local variable that ends up within closure</span></div><div class="line">    <span class="keyword">var</span> num = <span class="number">42</span>;</div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(num); &#125;</div><div class="line">    num++;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> sayNumber = say667();</div><div class="line">sayNumber(); <span class="comment">// logs 43</span></div></pre></td></tr></table></figure>
+<h3 id="作用域链副作用"><a href="#作用域链副作用" class="headerlink" title="作用域链副作用"></a>作用域链副作用</h3><p>作用域链的这种配置机制引出了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值。<strong>别忘了闭包所保存的是整个变量对象，而不是某个特殊的变量</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="comment">//实际操作匿名函数会被解析成字符串不知道为什么</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">		result[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> i;</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>修改方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">		result[i] = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> i;</div><div class="line">		&#125;)(i); <span class="comment">//保存变量</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>优点：共享函数作用域, 便于开放一些接口或变量供外部使用;</li>
+<li>注意事项: 由于闭包可能会使得函数中变量被长期保存在内存中, 从而大量消耗内存, 影响页面性能, 因此不能滥用, 并且在IE浏览中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</li>
+</ul>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>总结的很烂，理解还不是很透彻，贴个<a href="http://louiszhai.github.io/2015/12/22/scopeChain/" target="_blank" rel="external">博客链接</a>，还有<a href="http://stackoverflow.com/questions/111102/how-do-javascript-closures-work" target="_blank" rel="external">stackoverflow</a>。</p>
 
       
     </div>
@@ -371,7 +388,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/基础/" rel="tag">#基础</a>
+            <a href="/tags/js/" rel="tag">#js</a>
           
         </div>
       
@@ -380,17 +397,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/19/js-2/" rel="next" title="js引用类型--Function">
-                <i class="fa fa-chevron-left"></i> js引用类型--Function
+              <a href="/2016/10/20/work-1/" rel="next" title="飞鱼笔试以及零散总结">
+                <i class="fa fa-chevron-left"></i> 飞鱼笔试以及零散总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/25/js-3/" rel="prev" title="闭包">
-                闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -416,8 +429,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/20/work-1/"
-           data-title="飞鱼笔试以及零散总结" data-url="http://yoursite.com/2016/10/20/work-1/">
+      <div class="ds-thread" data-thread-key="2016/10/25/js-3/"
+           data-title="闭包" data-url="http://yoursite.com/2016/10/25/js-3/">
       </div>
     
   </div>
@@ -537,7 +550,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#位操作实现abs"><span class="nav-number">1.</span> <span class="nav-text">位操作实现abs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归实现数组求和"><span class="nav-number">2.</span> <span class="nav-text">递归实现数组求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个未解决的"><span class="nav-number">3.</span> <span class="nav-text">一个未解决的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js加载"><span class="nav-number">4.</span> <span class="nav-text">js加载</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#彻底理解闭包—-作用域链"><span class="nav-number">2.</span> <span class="nav-text">彻底理解闭包—-作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回到闭包"><span class="nav-number">3.</span> <span class="nav-text">回到闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域链副作用"><span class="nav-number">4.</span> <span class="nav-text">作用域链副作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
           </div>
         </section>
