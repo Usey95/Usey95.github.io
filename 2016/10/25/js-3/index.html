@@ -98,7 +98,7 @@
 闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
 
 12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
-<meta property="og:updated_time" content="2016-10-25T13:27:40.392Z">
+<meta property="og:updated_time" content="2016-10-25T14:06:44.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="概念
@@ -356,7 +356,7 @@
 <li>此后，又有一个活动对象（在此作为变量对象使用）被创建并被推入执行环境作用域链的前端。</li>
 <li>对于这个例子中compare()函数的执行环境而言，其作用域链中包含两个变量对象：本地活动对象和全局变量对象。</li>
 </ul>
-<p>啰嗦一大堆的结论：<strong>作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</strong>无论什么时候在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。一般来讲，<br>当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。</p>
+<p>啰嗦一大堆的结论：<strong>作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</strong>无论什么时候在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。一般来讲，当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。</p>
 <h3 id="回到闭包"><a href="#回到闭包" class="headerlink" title="回到闭包"></a>回到闭包</h3><p>我还是直接贴一些闭包吧，讲起来有点费劲。简单的说就是内部函数在定义他的作用域的外部被引用，就创建了该内部函数的闭包。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello2</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> text = <span class="string">'Hello '</span> + name; <span class="comment">// Local variable</span></div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(text); &#125;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> say2 = sayHello2(<span class="string">'Bob'</span>);</div><div class="line">say2(); <span class="comment">// logs "Hello Bob"</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say667</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Local variable that ends up within closure</span></div><div class="line">    <span class="keyword">var</span> num = <span class="number">42</span>;</div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(num); &#125;</div><div class="line">    num++;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> sayNumber = say667();</div><div class="line">sayNumber(); <span class="comment">// logs 43</span></div></pre></td></tr></table></figure>
 <h3 id="作用域链副作用"><a href="#作用域链副作用" class="headerlink" title="作用域链副作用"></a>作用域链副作用</h3><p>作用域链的这种配置机制引出了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值。<strong>别忘了闭包所保存的是整个变量对象，而不是某个特殊的变量</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="comment">//实际操作匿名函数会被解析成字符串不知道为什么</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">		result[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> i;</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -404,6 +404,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/28/work-2/" rel="prev" title="10/27笔试总结">
+                10/27笔试总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,7 +479,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

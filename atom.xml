@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-25T13:27:40.392Z</updated>
+  <updated>2016-10-28T14:30:16.997Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,150 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>10/27笔试总结</title>
+    <link href="http://yoursite.com/2016/10/28/work-2/"/>
+    <id>http://yoursite.com/2016/10/28/work-2/</id>
+    <published>2016-10-28T03:25:54.000Z</published>
+    <updated>2016-10-28T14:30:16.997Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="某音乐公共试题"><a href="#某音乐公共试题" class="headerlink" title="某音乐公共试题"></a>某音乐公共试题</h3><p>不小心发多了一份给我。。。</p>
+<ul>
+<li>C++中什么时候用const？</li>
+</ul>
+<p>C++ const 允许指定一个语义约束，编译器会强制实施这个约束，允许程序员告诉编译器某值是保持不变的。如果在编程中确实有某个值保持不变，就应该明确使用const，这样可以获得编译器的帮助，提高代码强壮性。<br><a id="more"></a></p>
+<ul>
+<li>与C中的const有什么区别？</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>C</th>
+<th>C++</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修饰变量，函数参数，返回值等。</td>
+<td>C++应用场景丰富得多，可以修饰类，修饰成员变量</td>
+</tr>
+<tr>
+<td>一个不能被改变的普通<strong>变量</strong></td>
+<td>常量</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>什么时候使用引用？</li>
+</ul>
+<p>当必须指向一个对象并且不想改变其指向时，或者在重载操作符并为防止不必要的语义误解时，你应该使用引用；而在除此之外的其他情况下，则应使用指针。</p>
+<ul>
+<li>引用和指针的区别？</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>引用</th>
+<th>指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引用是某块内存的别名</td>
+<td>引用是某块内存的别名</td>
+</tr>
+<tr>
+<td>别名</td>
+<td>实体</td>
+</tr>
+<tr>
+<td>定义时初始化一次，不可变</td>
+<td>可变</td>
+</tr>
+<tr>
+<td>无const</td>
+<td>有const</td>
+</tr>
+<tr>
+<td>不能为空</td>
+<td>可以为空</td>
+</tr>
+<tr>
+<td>sizeof得到变量大小</td>
+<td><a href="http://blog.csdn.net/kangroger/article/details/20653255" target="_blank" rel="external">指针大小</a></td>
+</tr>
+<tr>
+<td>分配内存</td>
+<td>不分配</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>模板编程对程序编译期、执行期的影响有哪些？</li>
+</ul>
+<p>模板是更智能的宏。模板和宏都是编译前代码生成，像宏一样，模板代码会被编译器在编译的第一阶段（在内部转，这点儿与预编译器不同）就展开成合法的C++代码，然后根据展开的代码生成目标代码，链接到最终的应用程序之中。模板与宏相比，它站在更高的抽象层上面，宏操作的是字符串中的token，然而模板却能够操作C++中的类型。所以模板更加安全（因为有类型检查），更加智能（可以根据上下文自动特化）……（<a href="https://www.zhihu.com/question/21656266/answer/18906432" target="_blank" rel="external">摘自知乎</a>），我理解为编译期展开代码，执行期无影响。</p>
+<ul>
+<li>全局变量和局部变量的区别，怎么实现，操作系统和编译器怎么知道？</li>
+</ul>
+<p>全局变量和局部变量的区别是在存储器中位置不同，具体说，全局变量存储在全局数据段中，局部变量都有可能，一般来说在堆栈段。</p>
+<ul>
+<li>读写、互斥锁的实现研究及性能分析</li>
+</ul>
+<p>读写锁特点：</p>
+<ol>
+<li>多个读者可以同时进行读</li>
+<li>写者必须互斥（只允许一个写者写，也不能读者写者同时进行）</li>
+<li>写者优先于读者（一旦有写者，则后续读者必须等待，唤醒时优先考虑写者）</li>
+</ol>
+<p>互斥锁特点：<br>一次只能一个线程拥有互斥锁，其他线程只有等待</p>
+<ul>
+<li>Java创建线程有几种不同的方式？倾向哪一种？为什么？</li>
+</ul>
+<ol>
+<li>需要从Java.lang.Thread类派生一个新的线程类，重载它的run()方法； </li>
+<li>实现Runnalbe接口，重载Runnalbe接口中的run()方法。</li>
+</ol>
+<p>在Java中，类仅支持单继承，也就是说，当定义一个新的类的时候，它只能扩展一个外部类.这样，如果创建自定义线程类的时候是通过扩展 Thread类的方法来实现的，那么这个自定义类就不能再去扩展其他的类，也就无法实现更加复杂的功能。因此，如果自定义类必须扩展其他的类，那么就可以使用实现Runnable接口的方法来定义该类为线程类，这样就可以避免Java单继承所带来的局限性。</p>
+<p>还有一点最重要的就是使用实现Runnable接口的方式创建的线程可以处理同一资源，从而实现资源的共享。</p>
+<ul>
+<li>在Java中，能够改变main()方法的返回类型？能否声明main()方法为非静态？</li>
+</ul>
+<p>不能。不能。如果main()允许是非静态的，那么在调用main方法时，JVM就得实例化它的类。在实例化时，还得调用类的构造函数。如果这个类的构造函数有参数，那么届时就会出现歧义。<br><a href="http://www.codeceo.com/article/10-java-main-interview.html" target="_blank" rel="external">10个Java main方法的面试题</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//例如，在下面的程序中，在实例化类“A”的时候，JVM传递什么参数？</span></div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span></span></div><div class="line">&#123;</div><div class="line">	public MainMethod(int i)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//Constructor taking one argument</span></div><div class="line">	&#125;</div><div class="line"> 	public <span class="keyword">void</span> main(<span class="built_in">String</span>[] args)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//main method as non-static</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>实现libc中的函数strstr</li>
+</ul>
+<p>比较简单，找出第二次出现的字符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strstr</span>(<span class="params">Array,key</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="built_in">Array</span>.indexOf(key,<span class="built_in">Array</span>.indexOf(key)+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line">s = <span class="string">"sdfad"</span>;</div><div class="line">alert(strstr(s,<span class="string">"d"</span>)); <span class="comment">//4</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>字符串循环右移N位</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//string不能直接进行赋值操作，所以遇到还是用C写吧</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">str,num</span>)</span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; num;i++)&#123;</div><div class="line">		<span class="keyword">var</span> j = str.length - <span class="number">1</span>;</div><div class="line">		<span class="keyword">var</span> temp = str[j];</div><div class="line">		<span class="keyword">while</span>(j &gt;= <span class="number">0</span>)&#123;</div><div class="line">			str[j] = str[j<span class="number">-1</span>];</div><div class="line">			<span class="built_in">console</span>.log(str);</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line">		str[<span class="number">0</span>] = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> str;</div><div class="line">&#125;</div><div class="line">alert(fun(<span class="string">"123456"</span>,<span class="number">2</span>));</div><div class="line"></div><div class="line"><span class="comment">//字符串逆置实现，C</span></div><div class="line"><span class="comment">/*实现循环移位 </span></div><div class="line">   比如：123456，循环右移2位，实际上是将字符串分成两部分 </div><div class="line">     先对1234逆置，得到4321 </div><div class="line">     再对56逆置，得到65 </div><div class="line">     此时字符串是432165 </div><div class="line">     最后再对整个字符串432165逆置，得到561234。实现了循环移位 </div><div class="line">     时间复杂度在线性时间内。 </div><div class="line">*/  </div><div class="line"></div><div class="line"><span class="keyword">void</span> invert(char ch[],int m,int n)  </div><div class="line">&#123;  </div><div class="line">    int i;  </div><div class="line">    char temp;  </div><div class="line">    <span class="keyword">for</span>(i=m;i&lt;(m+n)/<span class="number">2</span>;i++)  </div><div class="line">    &#123;  </div><div class="line">        temp=ch[i];  </div><div class="line">        ch[i]=ch[m+n<span class="number">-1</span>-i];  </div><div class="line">        ch[m+n<span class="number">-1</span>-i]=temp;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="keyword">void</span> loopMove(char c[],int steps)  </div><div class="line">&#123;  </div><div class="line">    int len;  </div><div class="line">    len=strlen(c)-steps;  </div><div class="line">    invert(c,<span class="number">0</span>,len);<span class="comment">//对字符串中前len位进行逆置  </span></div><div class="line">    invert(c,len,strlen(c));<span class="comment">//对字符串后steps位进行逆置  </span></div><div class="line">    invert(c,<span class="number">0</span>,strlen(c));<span class="comment">//再对整个字符串进行逆置  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>将所有单词首字母转为大写</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//w3cschool....还要抽一天专门看正则才行....</span></div><div class="line">name = <span class="string">'aaa bbb ccc'</span>;</div><div class="line">uw = name.replace(<span class="regexp">/\b\w+\b/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">word</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> word.substring(<span class="number">0</span>,<span class="number">1</span>).toUpperCase()+word.substring(<span class="number">1</span>);&#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>今天陪雨晨逛了半天有点累，就先写到这。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;某音乐公共试题&quot;&gt;&lt;a href=&quot;#某音乐公共试题&quot; class=&quot;headerlink&quot; title=&quot;某音乐公共试题&quot;&gt;&lt;/a&gt;某音乐公共试题&lt;/h3&gt;&lt;p&gt;不小心发多了一份给我。。。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C++中什么时候用const？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C++ const 允许指定一个语义约束，编译器会强制实施这个约束，允许程序员告诉编译器某值是保持不变的。如果在编程中确实有某个值保持不变，就应该明确使用const，这样可以获得编译器的帮助，提高代码强壮性。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>闭包</title>
     <link href="http://yoursite.com/2016/10/25/js-3/"/>
     <id>http://yoursite.com/2016/10/25/js-3/</id>
     <published>2016-10-25T06:48:09.000Z</published>
-    <updated>2016-10-25T13:27:40.392Z</updated>
+    <updated>2016-10-25T14:06:44.187Z</updated>
     
     <content type="html"><![CDATA[<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
@@ -41,7 +180,7 @@
 <li>此后，又有一个活动对象（在此作为变量对象使用）被创建并被推入执行环境作用域链的前端。</li>
 <li>对于这个例子中compare()函数的执行环境而言，其作用域链中包含两个变量对象：本地活动对象和全局变量对象。</li>
 </ul>
-<p>啰嗦一大堆的结论：<strong>作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</strong>无论什么时候在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。一般来讲，<br>当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。</p>
+<p>啰嗦一大堆的结论：<strong>作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。</strong>无论什么时候在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。一般来讲，当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。</p>
 <h3 id="回到闭包"><a href="#回到闭包" class="headerlink" title="回到闭包"></a>回到闭包</h3><p>我还是直接贴一些闭包吧，讲起来有点费劲。简单的说就是内部函数在定义他的作用域的外部被引用，就创建了该内部函数的闭包。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello2</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> text = <span class="string">'Hello '</span> + name; <span class="comment">// Local variable</span></div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(text); &#125;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> say2 = sayHello2(<span class="string">'Bob'</span>);</div><div class="line">say2(); <span class="comment">// logs "Hello Bob"</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say667</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Local variable that ends up within closure</span></div><div class="line">    <span class="keyword">var</span> num = <span class="number">42</span>;</div><div class="line">    <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(num); &#125;</div><div class="line">    num++;</div><div class="line">    <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> sayNumber = say667();</div><div class="line">sayNumber(); <span class="comment">// logs 43</span></div></pre></td></tr></table></figure>
 <h3 id="作用域链副作用"><a href="#作用域链副作用" class="headerlink" title="作用域链副作用"></a>作用域链副作用</h3><p>作用域链的这种配置机制引出了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值。<strong>别忘了闭包所保存的是整个变量对象，而不是某个特殊的变量</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="comment">//实际操作匿名函数会被解析成字符串不知道为什么</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">		result[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> i;</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
