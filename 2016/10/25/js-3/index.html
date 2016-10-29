@@ -89,7 +89,7 @@
 <meta name="description" content="概念
 闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
 
-12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
+1234567891011121314151617function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="闭包">
 <meta property="og:url" content="http://yoursite.com/2016/10/25/js-3/index.html">
@@ -97,14 +97,14 @@
 <meta property="og:description" content="概念
 闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
 
-12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
-<meta property="og:updated_time" content="2016-10-25T14:06:44.187Z">
+1234567891011121314151617function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;">
+<meta property="og:updated_time" content="2016-10-28T14:44:10.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="概念
 闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
 
-12345678910111213141516function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;		va">
+1234567891011121314151617function createComparisonFunction(propertyName) &amp;#123;	//匿名函数可以访问propertyName	return function(object1, object2)&amp;#123;">
 
 
 
@@ -217,6 +217,16 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-presentation">
+          <a href="/presentation" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-lightbulb-o"></i> <br />
+            
+            Presentation
           </a>
         </li>
       
@@ -340,7 +350,7 @@
         <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparisonFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">	<span class="comment">//匿名函数可以访问propertyName</span></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="keyword">if</span> (value1 &lt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparisonFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">	<span class="comment">//匿名函数可以访问propertyName</span></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="keyword">if</span> (value1 &lt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line">&lt;!--more--&gt;</div></pre></td></tr></table></figure>
 <h3 id="彻底理解闭包—-作用域链"><a href="#彻底理解闭包—-作用域链" class="headerlink" title="彻底理解闭包—-作用域链"></a>彻底理解闭包—-作用域链</h3><ul>
 <li>当某个函数被调用时，会创建一个执行环境（execution context）及相应的作用域链。</li>
 <li>然后，使用arguments 和其他命名参数的值来初始化函数的活动对象（activation object）。</li>
@@ -479,7 +489,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -489,7 +499,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

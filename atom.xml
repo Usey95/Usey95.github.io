@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-28T14:30:16.997Z</updated>
+  <updated>2016-10-29T13:43:33.563Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,87 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>续10/27</title>
+    <link href="http://yoursite.com/2016/10/29/work-3/"/>
+    <id>http://yoursite.com/2016/10/29/work-3/</id>
+    <published>2016-10-29T12:05:22.000Z</published>
+    <updated>2016-10-29T13:43:33.563Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="续上篇"><a href="#续上篇" class="headerlink" title="续上篇"></a>续上篇</h3><ul>
+<li>输入两个链表，找到他们的第一个公共节点。（说实话回来查的时候才知道什么意思。。）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">public <span class="keyword">static</span> Node FindFirstCommonNode(Node head1, Node head2)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 得到两个链表的长度</span></div><div class="line">        int length1 = GetListLength(head1);</div><div class="line">        int length2 = GetListLength(head2);</div><div class="line">        int diff = length1 - length2;</div><div class="line"></div><div class="line">        Node headLong = head1;</div><div class="line">        Node headShort = head2;</div><div class="line">        <span class="keyword">if</span> (diff &lt; <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            headLong = head2;</div><div class="line">            headShort = head1;</div><div class="line">            diff = length2 - length1;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 先在长链表上走几步</span></div><div class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; diff; i++)</div><div class="line">        &#123;</div><div class="line">            headLong = headLong.nextNode;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 再同时在两个链表上遍历</span></div><div class="line">        <span class="keyword">while</span> (headLong != <span class="literal">null</span> &amp;&amp; headShort != <span class="literal">null</span> &amp;&amp; headLong != headShort)</div><div class="line">        &#123;</div><div class="line">            headLong = headLong.nextNode;</div><div class="line">            headShort = headShort.nextNode;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        Node commonNode = headLong;</div><div class="line">        <span class="keyword">return</span> commonNode;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private <span class="keyword">static</span> int GetListLength(Node head)</div><div class="line">    &#123;</div><div class="line">        int length = <span class="number">0</span>;</div><div class="line">        Node tempNode = head;</div><div class="line">        <span class="keyword">while</span> (tempNode != <span class="literal">null</span>)</div><div class="line">        &#123;</div><div class="line">            tempNode = tempNode.nextNode;</div><div class="line">            length++;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> length;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>设计并实现一个LRU，我还是贴个<a href="http://blog.csdn.net/lisonglisonglisong/article/details/45599445" target="_blank" rel="external">博客</a>吧。</p>
+</li>
+<li><p>和最大子数列</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">s=[<span class="number">1</span>,<span class="number">-2</span>,<span class="number">3</span>,<span class="number">10</span>,<span class="number">-4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">-5</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> max = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; a.length - <span class="number">1</span>;i++)&#123;</div><div class="line">		<span class="keyword">var</span> temp = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; a.length - i - <span class="number">1</span>; j++) &#123;</div><div class="line">			temp += a[i+j];</div><div class="line">			max = temp &gt; max?temp:max;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> max;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(fun(s)); <span class="comment">//18</span></div></pre></td></tr></table></figure>
+<ul>
+<li>alt和title的区别</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>alt</th>
+<th>title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签的属性</td>
+<td>既是标签也是属性</td>
+</tr>
+<tr>
+<td>用来指定替换文字，只能用在img、area和input元素中，用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。注意，alt是替代图像作用而不是提供额外说明文字的，另外有助于SEO优化。</td>
+<td>用来为元素提供额外说明信息。例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>洗牌算法，定义：给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。即从一个数组里选出一个数放到新数组，如果这个数被选过，就随机再选一个数。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//优化过的算法，时间复杂度为O(n)，空间复杂度为O(0)，即不需要额外空间。</span></div><div class="line"><span class="keyword">void</span> MySwap(int &amp;x, int &amp;y)  </div><div class="line">&#123;  </div><div class="line">    int temp = x;  </div><div class="line">    x = y;  </div><div class="line">    y = temp;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="keyword">void</span> Shuffle(int n)  </div><div class="line">&#123;  </div><div class="line">    <span class="keyword">for</span>(int i=n<span class="number">-1</span>; i&gt;=<span class="number">1</span>; i--)  </div><div class="line">    &#123;  </div><div class="line">        MySwap(num[i], num[rand()%(i+<span class="number">1</span>)]);  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="近期计划"><a href="#近期计划" class="headerlink" title="近期计划"></a>近期计划</h3><p>通过这几天的刷面经跑笔试，发现一些需要总结的东西。</p>
+<ol>
+<li>http相关</li>
+<li>正则表达式</li>
+<li>链表相关</li>
+<li>什么什么攻防、什么什么跨域</li>
+<li>html、css细节，刷几个面经吧</li>
+<li>常见的浏览器兼容问题，不知道为什么2016年了还要考这些真的烦</li>
+<li>经典算法，这个只能靠做题了，每个看到的题都写一遍。</li>
+</ol>
+<p>要做的事情</p>
+<ol>
+<li>完成个人demo页（拖了好久了。。）</li>
+<li>vuejs入门</li>
+<li>express入门</li>
+<li>个人介绍小网页（有生之年估计排不上了。。）</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;续上篇&quot;&gt;&lt;a href=&quot;#续上篇&quot; class=&quot;headerlink&quot; title=&quot;续上篇&quot;&gt;&lt;/a&gt;续上篇&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;输入两个链表，找到他们的第一个公共节点。（说实话回来查的时候才知道什么意思。。）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure 
+    
+    </summary>
+    
+    
+      <category term="找工作。。。" scheme="http://yoursite.com/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C%E3%80%82%E3%80%82%E3%80%82/"/>
+    
+  </entry>
+  
+  <entry>
     <title>10/27笔试总结</title>
     <link href="http://yoursite.com/2016/10/28/work-2/"/>
     <id>http://yoursite.com/2016/10/28/work-2/</id>
     <published>2016-10-28T03:25:54.000Z</published>
-    <updated>2016-10-28T14:30:16.997Z</updated>
+    <updated>2016-10-29T12:44:51.628Z</updated>
     
     <content type="html"><![CDATA[<h3 id="某音乐公共试题"><a href="#某音乐公共试题" class="headerlink" title="某音乐公共试题"></a>某音乐公共试题</h3><p>不小心发多了一份给我。。。</p>
 <ul>
@@ -150,7 +226,7 @@
     </summary>
     
     
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="找工作。。。" scheme="http://yoursite.com/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C%E3%80%82%E3%80%82%E3%80%82/"/>
     
   </entry>
   
@@ -159,12 +235,12 @@
     <link href="http://yoursite.com/2016/10/25/js-3/"/>
     <id>http://yoursite.com/2016/10/25/js-3/</id>
     <published>2016-10-25T06:48:09.000Z</published>
-    <updated>2016-10-25T14:06:44.187Z</updated>
+    <updated>2016-10-28T14:44:10.767Z</updated>
     
     <content type="html"><![CDATA[<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparisonFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">	<span class="comment">//匿名函数可以访问propertyName</span></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="keyword">if</span> (value1 &lt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparisonFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">	<span class="comment">//匿名函数可以访问propertyName</span></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="keyword">if</span> (value1 &lt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		&#125; </div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line">&lt;!--more--&gt;</div></pre></td></tr></table></figure>
 <h3 id="彻底理解闭包—-作用域链"><a href="#彻底理解闭包—-作用域链" class="headerlink" title="彻底理解闭包—-作用域链"></a>彻底理解闭包—-作用域链</h3><ul>
 <li>当某个函数被调用时，会创建一个执行环境（execution context）及相应的作用域链。</li>
 <li>然后，使用arguments 和其他命名参数的值来初始化函数的活动对象（activation object）。</li>
@@ -210,7 +286,7 @@
     <link href="http://yoursite.com/2016/10/20/work-1/"/>
     <id>http://yoursite.com/2016/10/20/work-1/</id>
     <published>2016-10-20T11:27:24.000Z</published>
-    <updated>2016-10-20T12:57:22.448Z</updated>
+    <updated>2016-10-29T12:44:49.881Z</updated>
     
     <content type="html"><![CDATA[<h3 id="位操作实现abs"><a href="#位操作实现abs" class="headerlink" title="位操作实现abs"></a>位操作实现abs</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">-120</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> num*(<span class="number">1</span>-((num&gt;&gt;&gt;<span class="number">31</span>)&lt;&lt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(abs(num));<span class="comment">//120</span></div></pre></td></tr></table></figure>
 <h3 id="递归实现数组求和"><a href="#递归实现数组求和" class="headerlink" title="递归实现数组求和"></a>递归实现数组求和</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,n</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> (n===<span class="number">0</span>)?<span class="number">0</span>:sum(a[n<span class="number">-1</span>],n<span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -240,7 +316,7 @@
     </summary>
     
     
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="找工作。。。" scheme="http://yoursite.com/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C%E3%80%82%E3%80%82%E3%80%82/"/>
     
   </entry>
   
@@ -422,7 +498,7 @@
     <link href="http://yoursite.com/2016/10/13/algorithm-sort/"/>
     <id>http://yoursite.com/2016/10/13/algorithm-sort/</id>
     <published>2016-10-13T07:31:09.000Z</published>
-    <updated>2016-10-15T13:23:08.088Z</updated>
+    <updated>2016-10-29T12:11:31.014Z</updated>
     
     <content type="html"><![CDATA[<h2 id="常用排序算法"><a href="#常用排序算法" class="headerlink" title="常用排序算法"></a>常用排序算法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> SelectionSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		int min = i;</div><div class="line">		<span class="keyword">for</span>(int j = i + <span class="number">1</span>;j &lt; n - <span class="number">1</span>;j++)</div><div class="line">			<span class="keyword">if</span>(a[min] &gt; a[j]) min = j;</div><div class="line">		swap(a[min],a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法思想：对有n个元素的序列进行n-1趟排序，相邻元素逆序则交换。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> BubbleSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n<span class="number">-1</span>;i++)&#123;</div><div class="line">		<span class="comment">//改进算法，如果一趟未逆序则已经有序</span></div><div class="line">		<span class="comment">//bool exchange = true;</span></div><div class="line">		<span class="keyword">for</span>(int j = <span class="number">0</span>;j &lt; n-i<span class="number">-1</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(a[j + <span class="number">1</span>] &lt; a[j])&#123;</div><div class="line">				swap(a[j],a[j + <span class="number">1</span>]);</div><div class="line">				<span class="comment">//exchange = false;</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(exchange)&#123;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
