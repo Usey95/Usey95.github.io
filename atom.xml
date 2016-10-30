@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-29T13:43:33.563Z</updated>
+  <updated>2016-10-30T14:36:38.580Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,207 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>http相关</title>
+    <link href="http://yoursite.com/2016/10/30/work-5/"/>
+    <id>http://yoursite.com/2016/10/30/work-5/</id>
+    <published>2016-10-30T06:23:22.000Z</published>
+    <updated>2016-10-30T14:36:38.580Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>网络体系结构</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>OSI</th>
+<th>TCP/IP</th>
+<th>设备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层、表示层、会话层</td>
+<td>应用层（TELNET/FTP/SMTP）</td>
+<td>网关</td>
+</tr>
+<tr>
+<td>运输层</td>
+<td>运输层（TCP/UDP）</td>
+<td>网关</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>网络层（IP/ARP/RARP/ICMP（差错控制/询问））</td>
+<td>路由器</td>
+</tr>
+<tr>
+<td>数据链路层(ARP/RARP)、物理层</td>
+<td>网络接口层</td>
+<td>网桥</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<ul>
+<li><p>IPv4：32位，IPv6：128位</p>
+</li>
+<li><p>TCP和UDP的区别</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>面向连接</td>
+<td>无连接</td>
+</tr>
+<tr>
+<td>可靠</td>
+<td>不可靠</td>
+</tr>
+<tr>
+<td>慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>面向字节流</td>
+<td>面向数据报</td>
+</tr>
+<tr>
+<td>一对一</td>
+<td>无限制</td>
+</tr>
+<tr>
+<td>SMTP、TELNET（远程终端协议）、HTTP、FTP</td>
+<td>DNS之类</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>常用端口号</li>
+</ul>
+<p>应用程序|FTP|TELNET|DNS|HTTP<br>端口号|21|23|53|80</p>
+<ul>
+<li>输入一个URL之后，发生了什么事情</li>
+</ul>
+<ol>
+<li>DNS查找。浏览器缓存–&gt;系统缓存–&gt;路由器缓存–&gt;ISP DNS缓存–&gt;DNS服务器一系列的操作</li>
+<li>浏览器给服务器发送一个HTTP请求</li>
+<li>服务器返回永久重定向响应</li>
+<li>浏览器跟踪重定向地址，再次发送请求</li>
+<li>服务器处理请求，请求处理阅读请求及它的参数和cookies。它会读取也可能更新一些数据，并讲数据存储在服务器上。然后，需求处理会生成一个HTML响应并发回。</li>
+<li>浏览器显示HTML，发送获取嵌入在HTML中的对象</li>
+<li>浏览器发送AJAX请求</li>
+<li>附<a href="http://fex.baidu.com/blog/2014/05/what-happen/" target="_blank" rel="external">百度FEX</a></li>
+<li>临走发现一个<a href="https://github.com/skyline75489/what-happens-when-zh_CN/blob/master/README.rst" target="_blank" rel="external">github</a></li>
+</ol>
+<ul>
+<li>常见的HTTP报头（在百度随便搜了一个东西）</li>
+</ul>
+<p><strong>General</strong><br>//请求url<br>Request URL:<a href="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300" target="_blank" rel="external">https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300</a><br>//请求方式<br>Request Method:GET<br>//状态码<br>Status Code:200 OK<br>//远程地址<br>Remote Address:123.138.46.33:443<br><strong>响应头</strong><br>Response Headers<br>//HTTP状态<br>HTTP/1.1 200 OK<br>//服务器<br>Server: bfe/1.0.8.13-sslpool-patch<br>//时间<br>Date: Sun, 30 Oct 2016 12:06:59 GMT<br>//类型<br>Content-Type: image/jpeg<br>//响应实体大小，比如这个图片大小为8K<br>Content-Length: 8682<br>Connection: keep-alive<br>ETag: e1139bc1b225c6b15cf5f557191a3b5d<br>Last-Modified: Thu, 01 Jan 1970 00:00:00 GMT<br>Expires: Sat, 05 Nov 2016 15:13:26 GMT<br>Age: 2098413<br>//缓存控制<br>Cache-Control: max-age=2628000<br>//支持range请求<br>Accept-Ranges:bytes<br><strong>请求头</strong><br>Request Headers<br>//GET URL<br>GET /6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300 HTTP/1.1<br>//服务器<br>Host: ss0.baidu.com<br>//连接<br>Connection: keep-alive<br>//客户端信息<br>User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36<br>//客户端接收的内容<br>Accept: image/webp,image/*,*/*;q=0.8<br>//重定向<br>Referer: <a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv\_bp=0&amp;rsv\_idx=1&amp;tn=baidu&amp;wd=13&amp;rsv\_pq=abb5ee1400056681&amp;rsv\_t=14aeOKfIZAsgYDBJrtjMbN3S9J4OR7Qp3t%2FlNCyjfqRxD25VH0wN%2FGIOF8w&amp;rqlang=cn&amp;rsv\_enter=0&amp;rsv\_sug3=3&amp;rsv\_sug1=1&amp;rsv\_sug7=100&amp;inputT=42311&amp;rsv_sug4=42312" target="_blank" rel="external">https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv\_bp=0&amp;rsv\_idx=1&amp;tn=baidu&amp;wd=13&amp;rsv\_pq=abb5ee1400056681&amp;rsv\_t=14aeOKfIZAsgYDBJrtjMbN3S9J4OR7Qp3t%2FlNCyjfqRxD25VH0wN%2FGIOF8w&amp;rqlang=cn&amp;rsv\_enter=0&amp;rsv\_sug3=3&amp;rsv\_sug1=1&amp;rsv\_sug7=100&amp;inputT=42311&amp;rsv_sug4=42312</a><br>//编码<br>Accept-Encoding: gzip, deflate, sdch, br<br>//语言<br>Accept-Language: zh-CN,zh;q=0.8<br>//Cookie<br>Cookie: BAIDUID=9F5B7C3C7D2E52A2B3A65EFD8B03C636:FG=1; PSTM=1477206449; BIDUPSID=70907222E1DDE291452052388B6D9D0F; pgv_pvi=7821050880; PSINO=2; H_PS_PSSID=1456_18241_21083_21455_21406_21394_21377_21190_20718</p>
+<p>总结一下，HTTP报头包括general、request、response部分。</p>
+<ul>
+<li>general：URL、METHOD、状态码、地址</li>
+<li>request：GET URL、HOST、客户端信息、指定接收内容（类型、编码、语言等）、重定向、Cookie</li>
+<li><p>response：HTTP状态、服务器、时间、类型、响应实体大小</p>
+</li>
+<li><p>cookie，localstorage，sessionstorage，session，indexDB</p>
+</li>
+</ul>
+<p>session，意思是会话，是服务器端使用的一种记录客户端状态的机制。<br>indexDB：HTML5的本地存储，用作离线应用<br>localstorage：HTML5的本地存储，页面刷新后不消失，方法有setItem、getItem和removeItem，其他的还有点key之类的。<br>Cookie: Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在，在客户端记录信息确定用户身份，最大为4kb</p>
+<p>今天顺道做个题</p>
+<ul>
+<li>写个Animal类，有个Cat类继承它，要求新建一个Cat的实例，可以调用catch方法输出自己的名字“大白的猫”</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Animal.prototype = &#123;</div><div class="line">	<span class="attr">name</span>:<span class="string">""</span>,</div><div class="line">	<span class="attr">catch</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal();</div><div class="line">cat.name = <span class="string">"大花猫"</span>;</div><div class="line">cat.catch();</div></pre></td></tr></table></figure>
+<p>发现还是不熟，明天再总结一下JS事件捕获、冒泡什么的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;网络体系结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OSI&lt;/th&gt;
+&lt;th&gt;TCP/IP&lt;/th&gt;
+&lt;th&gt;设备&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;应用层、表示层、会话层&lt;/td&gt;
+&lt;td&gt;应用层（TELNET/FTP/SMTP）&lt;/td&gt;
+&lt;td&gt;网关&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;运输层&lt;/td&gt;
+&lt;td&gt;运输层（TCP/UDP）&lt;/td&gt;
+&lt;td&gt;网关&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;网络层&lt;/td&gt;
+&lt;td&gt;网络层（IP/ARP/RARP/ICMP（差错控制/询问））&lt;/td&gt;
+&lt;td&gt;路由器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据链路层(ARP/RARP)、物理层&lt;/td&gt;
+&lt;td&gt;网络接口层&lt;/td&gt;
+&lt;td&gt;网桥&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="找工作。。。" scheme="http://yoursite.com/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C%E3%80%82%E3%80%82%E3%80%82/"/>
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10/30零碎问题</title>
+    <link href="http://yoursite.com/2016/10/30/work-4/"/>
+    <id>http://yoursite.com/2016/10/30/work-4/</id>
+    <published>2016-10-30T03:29:22.000Z</published>
+    <updated>2016-10-30T14:36:41.045Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="js内置排序问题"><a href="#js内置排序问题" class="headerlink" title="js内置排序问题"></a>js内置排序问题</h3><ul>
+<li>sort接受一个函数为参数，这个函数作为比较的依据。</li>
+<li>javascript的sort方法是使用了优化过的快速排序算法来实现的。以V8引擎为例，具体的优化手段有：小数组（小于10项）采用插入排序提升效率，一般数组采用三数取中获得基准元素。</li>
+<li>超过2000项的大数组采用更复杂的规则获得基准元素（这条和上面一条降低算法进入最差情况的几率，特别是对于已排序的数组意义很大）。</li>
+<li>分区时会分成小于基准、等于基准、大于基准三个分区（解决数组元素相同时快速排序算法效率极差的问题）。</li>
+<li>对于小于基准和大于基准这两个分区，选择项数少的进行递归，项数多的进行循环，有效降低递归深度。</li>
+<li><a href="http://www.zhouhua.info/2015/06/18/quicksort/" target="_blank" rel="external">深入了解javascript的sort方法</a></li>
+<li><a href="https://github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js" target="_blank" rel="external">v8源码</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;js内置排序问题&quot;&gt;&lt;a href=&quot;#js内置排序问题&quot; class=&quot;headerlink&quot; title=&quot;js内置排序问题&quot;&gt;&lt;/a&gt;js内置排序问题&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;sort接受一个函数为参数，这个函数作为比较的依据。&lt;/li&gt;
+&lt;li&gt;java
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="找工作。。。" scheme="http://yoursite.com/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C%E3%80%82%E3%80%82%E3%80%82/"/>
+    
+  </entry>
   
   <entry>
     <title>续10/27</title>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js,找工作。。。," />
 
 
 
@@ -86,15 +86,28 @@
 
 
 
-<meta name="description" content="For the heart is organ of fire.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DEARPORK">
-<meta property="og:url" content="http://yoursite.com/tags/页面重构/index.html">
+<meta name="description" content="js内置排序问题
+sort接受一个函数为参数，这个函数作为比较的依据。
+javascript的sort方法是使用了优化过的快速排序算法来实现的。以V8引擎为例，具体的优化手段有：小数组（小于10项）采用插入排序提升效率，一般数组采用三数取中获得基准元素。
+超过2000项的大数组采用更复杂的规则获得基准元素（这条和上面一条降低算法进入最差情况的几率，特别是对于已排序的数组意义很大）。
+分区时会分成小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10/30零碎问题">
+<meta property="og:url" content="http://yoursite.com/2016/10/30/work-4/index.html">
 <meta property="og:site_name" content="DEARPORK">
-<meta property="og:description" content="For the heart is organ of fire.">
+<meta property="og:description" content="js内置排序问题
+sort接受一个函数为参数，这个函数作为比较的依据。
+javascript的sort方法是使用了优化过的快速排序算法来实现的。以V8引擎为例，具体的优化手段有：小数组（小于10项）采用插入排序提升效率，一般数组采用三数取中获得基准元素。
+超过2000项的大数组采用更复杂的规则获得基准元素（这条和上面一条降低算法进入最差情况的几率，特别是对于已排序的数组意义很大）。
+分区时会分成小">
+<meta property="og:updated_time" content="2016-10-30T14:36:41.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DEARPORK">
-<meta name="twitter:description" content="For the heart is organ of fire.">
+<meta name="twitter:title" content="10/30零碎问题">
+<meta name="twitter:description" content="js内置排序问题
+sort接受一个函数为参数，这个函数作为比较的依据。
+javascript的sort方法是使用了优化过的快速排序算法来实现的。以V8引擎为例，具体的优化手段有：小数组（小于10项）采用插入排序提升效率，一般数组采用三数取中获得基准元素。
+超过2000项的大数组采用更复杂的规则获得基准元素（这条和上面一条降低算法进入最差情况的几率，特别是对于已排序的数组意义很大）。
+分区时会分成小">
 
 
 
@@ -115,10 +128,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/页面重构/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/30/work-4/"/>
 
 
-  <title> Tag: 页面重构 | DEARPORK </title>
+  <title> 10/30零碎问题 | DEARPORK </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="en">
@@ -149,7 +162,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -260,46 +273,152 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        页面重构
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                10/30零碎问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-30T11:29:22+08:00" content="2016-10-30">
+              2016-10-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/30/work-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/30/work-4/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/30/work-4/" class="leancloud_visitors" data-flag-title="10/30零碎问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="js内置排序问题"><a href="#js内置排序问题" class="headerlink" title="js内置排序问题"></a>js内置排序问题</h3><ul>
+<li>sort接受一个函数为参数，这个函数作为比较的依据。</li>
+<li>javascript的sort方法是使用了优化过的快速排序算法来实现的。以V8引擎为例，具体的优化手段有：小数组（小于10项）采用插入排序提升效率，一般数组采用三数取中获得基准元素。</li>
+<li>超过2000项的大数组采用更复杂的规则获得基准元素（这条和上面一条降低算法进入最差情况的几率，特别是对于已排序的数组意义很大）。</li>
+<li>分区时会分成小于基准、等于基准、大于基准三个分区（解决数组元素相同时快速排序算法效率极差的问题）。</li>
+<li>对于小于基准和大于基准这两个分区，选择项数少的进行递归，项数多的进行循环，有效降低递归深度。</li>
+<li><a href="http://www.zhouhua.info/2015/06/18/quicksort/" target="_blank" rel="external">深入了解javascript的sort方法</a></li>
+<li><a href="https://github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js" target="_blank" rel="external">v8源码</a></li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/17/css-1/" itemprop="url">
-              
-                <span itemprop="name">多余部分省略为点点点</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-17T23:06:19+08:00"
-              content="2016-10-17" >
-          10-17
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/找工作。。。/" rel="tag">#找工作。。。</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/29/work-3/" rel="next" title="续10/27">
+                <i class="fa fa-chevron-left"></i> 续10/27
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/30/work-5/" rel="prev" title="http相关">
+                http相关 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -307,6 +426,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/30/work-4/"
+           data-title="10/30零碎问题" data-url="http://yoursite.com/2016/10/30/work-4/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -326,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -406,6 +542,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#js内置排序问题"><span class="nav-number">1.</span> <span class="nav-text">js内置排序问题</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -502,6 +649,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
