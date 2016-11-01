@@ -150,7 +150,7 @@ TCP/IP
 数据链路层(ARP/RARP)、物理层
 网络接口层
 网桥">
-<meta property="og:updated_time" content="2016-10-30T14:36:38.580Z">
+<meta property="og:updated_time" content="2016-11-01T07:09:02.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http相关">
 <meta name="twitter:description" content="网络体系结构
@@ -531,12 +531,7 @@ TCP/IP
 <li><p>cookie，localstorage，sessionstorage，session，indexDB</p>
 </li>
 </ul>
-<p>session，意思是会话，是服务器端使用的一种记录客户端状态的机制。<br>indexDB：HTML5的本地存储，用作离线应用<br>localstorage：HTML5的本地存储，页面刷新后不消失，方法有setItem、getItem和removeItem，其他的还有点key之类的。<br>Cookie: Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在，在客户端记录信息确定用户身份，最大为4kb</p>
-<p>今天顺道做个题</p>
-<ul>
-<li>写个Animal类，有个Cat类继承它，要求新建一个Cat的实例，可以调用catch方法输出自己的名字“大白的猫”</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Animal.prototype = &#123;</div><div class="line">	<span class="attr">name</span>:<span class="string">""</span>,</div><div class="line">	<span class="attr">catch</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal();</div><div class="line">cat.name = <span class="string">"大花猫"</span>;</div><div class="line">cat.catch();</div></pre></td></tr></table></figure>
+<p>会话（Session）跟踪是Web程序中常用的技术，用来跟踪用户的整个会话。常用的会话跟踪技术是Cookie与Session。Cookie通过在客户端记录信息确定用户身份，Session通过在服务器端记录信息确定用户身份。<a href="http://blog.csdn.net/fangaoxin/article/details/6952954/" target="_blank" rel="external">一篇CSDN博客，讲的很清楚</a><br>indexDB：HTML5的本地存储，用作离线应用<br>localstorage：HTML5的本地存储，页面刷新后不消失，方法有setItem、getItem和removeItem，其他的还有点key之类的。</p>
 <p>发现还是不熟，明天再总结一下JS事件捕获、冒泡什么的。</p>
 
       
@@ -578,6 +573,10 @@ TCP/IP
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/31/js-4/" rel="prev" title="js继承">
+                js继承 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -649,7 +648,7 @@ TCP/IP
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
