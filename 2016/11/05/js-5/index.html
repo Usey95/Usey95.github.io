@@ -68,12 +68,10 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="DEARPORK" type="application/atom+xml" />
@@ -88,16 +86,28 @@
 
 
 
-<meta name="description" content="For the heart is organ of fire.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="RegExpECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正则表达式。var expression = / pattern / flags ;pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。
+
+g 全局，并非一经匹配马上停止
+i 忽略大小写
+m 多行匹配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js引用类型--RegExp">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/js-5/index.html">
 <meta property="og:site_name" content="DEARPORK">
-<meta property="og:description" content="For the heart is organ of fire.">
-<meta property="og:updated_time" content="2016-10-12T09:22:11.532Z">
+<meta property="og:description" content="RegExpECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正则表达式。var expression = / pattern / flags ;pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。
+
+g 全局，并非一经匹配马上停止
+i 忽略大小写
+m 多行匹配">
+<meta property="og:updated_time" content="2016-11-05T10:04:20.589Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="For the heart is organ of fire.">
+<meta name="twitter:title" content="js引用类型--RegExp">
+<meta name="twitter:description" content="RegExpECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正则表达式。var expression = / pattern / flags ;pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。
+
+g 全局，并非一经匹配马上停止
+i 忽略大小写
+m 多行匹配">
 
 
 
@@ -118,16 +128,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/05/js-5/"/>
 
 
-  <title>
-  
-
-  
-    about | DEARPORK
-  
-</title>
+  <title> js引用类型--RegExp | DEARPORK </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="en">
@@ -158,7 +162,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -271,9 +275,157 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js引用类型--RegExp
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-05T18:01:52+08:00" content="2016-11-05">
+              2016-11-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/05/js-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/05/js-5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/05/js-5/" class="leancloud_visitors" data-flag-title="js引用类型--RegExp">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <h3 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h3><p>ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正<br>则表达式。<br>var expression = / pattern / flags ;<br>pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。</p>
+<ul>
+<li>g 全局，并非一经匹配马上停止</li>
+<li>i 忽略大小写</li>
+<li>m 多行匹配</li>
+</ul>
+<a id="more"></a>
+<h4 id="一些实例属性"><a href="#一些实例属性" class="headerlink" title="一些实例属性"></a>一些实例属性</h4><ul>
+<li>global 是否设置了g标志</li>
+<li>ignoreCase 是否设置了i标志</li>
+<li>lastIndex 开始搜索下一个匹配项的字符位置</li>
+<li>multiline 是否设置了m标志</li>
+<li>source 正则表达式的字符串表示</li>
+</ul>
+<p>其实这些属性没有多大用处，因为可以直接从正则里看。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/\\[bc\\]at/i</span>; </div><div class="line">alert(pattern1.global); <span class="comment">//false</span></div><div class="line">alert(pattern1.ignoreCase); <span class="comment">//true</span></div><div class="line">alert(pattern1.multiline); <span class="comment">//false</span></div><div class="line">alert(pattern1.lastIndex); <span class="comment">//0</span></div><div class="line">alert(pattern1.source); <span class="comment">//"\\[bc\\]at"</span></div></pre></td></tr></table></figure></p>
+<h4 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h4><h5 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h5><p>RegExp 对象的主要方法是exec()，该方法是专门为捕获组而设计的。exec()接受一个参数，即<br>要应用模式的字符串，然后返回包含第一个匹配项信息的数组；或者在没有匹配项的情况下返回null。<br>返回的数组虽然是Array 的实例，但包含两个额外的属性：index 和input。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">"mom and dad and baby"</span>;</div><div class="line"><span class="keyword">var</span> pattern = <span class="regexp">/mom( and dad( and baby)?)?/gi</span>;</div><div class="line"><span class="keyword">var</span> matches = pattern.exec(text);</div><div class="line"><span class="built_in">console</span>.log(matches);</div><div class="line"><span class="comment">//["mom and dad and baby", " and dad and baby", " and baby", index: 0, input: "mom and dad and baby"]</span></div></pre></td></tr></table></figure></p>
+<p>这个例子中的模式包含两个捕获组。最内部的捕获组匹配”and baby”，而包含它的捕获组匹配”and dad”或者”and dad and baby”。当把字符串传入exec()方法中之后，发现了一个匹配项。因为整个字符串本身与模式匹配，所以返回的数组matchs 的index 属性值为0。数组中的第一项是匹配的整个字符串，第二项包含与第一个捕获组匹配的内容，第三项包含与第二个捕获组匹配的内容。<br>对于exec()来说，即使设置了/g，每次也只返回<strong>一项</strong>匹配，多次调用返回多项。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/.at/g</span>;</div><div class="line"><span class="keyword">var</span> matches = pattern2.exec(text);</div><div class="line">alert(matches.index); <span class="comment">//0</span></div><div class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//cat</span></div><div class="line">alert(pattern2.lastIndex); <span class="comment">//3</span></div><div class="line"></div><div class="line">matches = pattern2.exec(text);</div><div class="line">alert(matches.index); <span class="comment">//5</span></div><div class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//bat</span></div><div class="line">alert(pattern2.lastIndex); <span class="comment">//8</span></div></pre></td></tr></table></figure></p>
+<h5 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h5><p>它接受一个字符串参数。在模式与该参数匹配的情况下返回true；否则，返回false。在只想知道目标字符串与某个模式是否匹配，但不需要知道其文本内容的情况下，使用这个方法非常方便。因此，test()方法经常被用在if 语句中，如下面的例子所示。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">"000-00-0000"</span>;</div><div class="line"><span class="keyword">var</span> pattern = <span class="regexp">/\d&#123;3&#125;-\d&#123;2&#125;-\d&#123;4&#125;/</span>;</div><div class="line"><span class="keyword">if</span> (pattern.test(text))&#123;</div><div class="line">	alert(<span class="string">"The pattern was matched."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>test()方法常用于验证用户输入是否符合规范。</p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>比如toLocaleString()和toString()方法，返回正则表达式的字面量。<br>valueOf()则返回自身。<br>match方法不知道为什么没写，同exec()返回的也是数组，但是执行的是全局匹配。</p>
+<h4 id="一些常用的正则表达式（持续更新）"><a href="#一些常用的正则表达式（持续更新）" class="headerlink" title="一些常用的正则表达式（持续更新）"></a>一些常用的正则表达式（持续更新）</h4><p>实现replaceAll()方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceAll</span>(<span class="params">str</span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(str != <span class="literal">null</span>)</div><div class="line">	str = str.replace(<span class="regexp">/word/g</span>,<span class="string">"Excel"</span>)</div><div class="line">	<span class="keyword">return</span> str;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(replaceAll(<span class="string">"wordwordwordword"</span>));</div></pre></td></tr></table></figure></p>
+<p>邮箱验证的正则<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加号表示匹配一个或多个在它之前的字符</span></div><div class="line"><span class="keyword">var</span> p = <span class="regexp">/^([a-zA-z0-9/-])+@([a-zA-Z0-9/-])+(.[a-zA-Z0-9/-])+$/</span></div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"usey95@qq.com"</span>)); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"usey95"</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>验证手机号的正则<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p = <span class="regexp">/^1[3|5|8][0-9]\d&#123;4,8&#125;$/</span>;</div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"13055556666"</span>)); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"23055556666"</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/03/work-6/" rel="next" title="11/3一些悬而未决的小问题">
+                <i class="fa fa-chevron-left"></i> 11/3一些悬而未决的小问题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -284,8 +436,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="about/index.html"
-           data-title="about" data-url="http://yoursite.com/about/index.html">
+      <div class="ds-thread" data-thread-key="2016/11/05/js-5/"
+           data-title="js引用类型--RegExp" data-url="http://yoursite.com/2016/11/05/js-5/">
       </div>
     
   </div>
@@ -309,8 +461,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -389,6 +550,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp"><span class="nav-number">1.</span> <span class="nav-text">RegExp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一些实例属性"><span class="nav-number">1.1.</span> <span class="nav-text">一些实例属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例方法"><span class="nav-number">1.2.</span> <span class="nav-text">实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#exec"><span class="nav-number">1.2.1.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#test"><span class="nav-number">1.2.2.</span> <span class="nav-text">test()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他"><span class="nav-number">1.2.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用的正则表达式（持续更新）"><span class="nav-number">1.3.</span> <span class="nav-text">一些常用的正则表达式（持续更新）</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -485,6 +657,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
