@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-03T04:09:53.567Z</updated>
+  <updated>2016-11-05T08:34:57.092Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,14 +16,94 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>js引用类型--RegExp</title>
+    <link href="http://yoursite.com/2016/11/05/js-5/"/>
+    <id>http://yoursite.com/2016/11/05/js-5/</id>
+    <published>2016-11-05T01:24:25.000Z</published>
+    <updated>2016-11-05T08:34:57.092Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h3><p>ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正<br>则表达式。<br>var expression = / pattern / flags ;<br>pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。</p>
+<ul>
+<li>g 全局，并非一经匹配马上停止</li>
+<li>i 忽略大小写</li>
+<li>m 多行匹配</li>
+</ul>
+<a id="more"></a>
+<h4 id="一些实例属性"><a href="#一些实例属性" class="headerlink" title="一些实例属性"></a>一些实例属性</h4><ul>
+<li>global 是否设置了g标志</li>
+<li>ignoreCase 是否设置了i标志</li>
+<li>lastIndex 开始搜索下一个匹配项的字符位置</li>
+<li>multiline 是否设置了m标志</li>
+<li>source 正则表达式的字符串表示</li>
+</ul>
+<p>其实这些属性没有多大用处，因为可以直接从正则里看。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/\\[bc\\]at/i</span>; </div><div class="line">alert(pattern1.global); <span class="comment">//false</span></div><div class="line">alert(pattern1.ignoreCase); <span class="comment">//true</span></div><div class="line">alert(pattern1.multiline); <span class="comment">//false</span></div><div class="line">alert(pattern1.lastIndex); <span class="comment">//0</span></div><div class="line">alert(pattern1.source); <span class="comment">//"\\[bc\\]at"</span></div></pre></td></tr></table></figure></p>
+<h4 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h4><h5 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h5><p>RegExp 对象的主要方法是exec()，该方法是专门为捕获组而设计的。exec()接受一个参数，即<br>要应用模式的字符串，然后返回包含第一个匹配项信息的数组；或者在没有匹配项的情况下返回null。<br>返回的数组虽然是Array 的实例，但包含两个额外的属性：index 和input。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">"mom and dad and baby"</span>;</div><div class="line"><span class="keyword">var</span> pattern = <span class="regexp">/mom( and dad( and baby)?)?/gi</span>;</div><div class="line"><span class="keyword">var</span> matches = pattern.exec(text);</div><div class="line"><span class="built_in">console</span>.log(matches);</div><div class="line"><span class="comment">//["mom and dad and baby", " and dad and baby", " and baby", index: 0, input: "mom and dad and baby"]</span></div></pre></td></tr></table></figure></p>
+<p>这个例子中的模式包含两个捕获组。最内部的捕获组匹配”and baby”，而包含它的捕获组匹配”and dad”或者”and dad and baby”。当把字符串传入exec()方法中之后，发现了一个匹配项。因为整个字符串本身与模式匹配，所以返回的数组matchs 的index 属性值为0。数组中的第一项是匹配的整个字符串，第二项包含与第一个捕获组匹配的内容，第三项包含与第二个捕获组匹配的内容。<br>对于exec()来说，即使设置了/g，每次也只返回<strong>一项</strong>匹配，多次调用返回多项。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/.at/g</span>;</div><div class="line"><span class="keyword">var</span> matches = pattern2.exec(text);</div><div class="line">alert(matches.index); <span class="comment">//0</span></div><div class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//cat</span></div><div class="line">alert(pattern2.lastIndex); <span class="comment">//3</span></div><div class="line"></div><div class="line">matches = pattern2.exec(text);</div><div class="line">alert(matches.index); <span class="comment">//5</span></div><div class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//bat</span></div><div class="line">alert(pattern2.lastIndex); <span class="comment">//8</span></div></pre></td></tr></table></figure></p>
+<h5 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h5><p>它接受一个字符串参数。在模式与该参数匹配的情况下返回true；否则，返回false。在只想知道目标字符串与某个模式是否匹配，但不需要知道其文本内容的情况下，使用这个方法非常方便。因此，test()方法经常被用在if 语句中，如下面的例子所示。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">"000-00-0000"</span>;</div><div class="line"><span class="keyword">var</span> pattern = <span class="regexp">/\d&#123;3&#125;-\d&#123;2&#125;-\d&#123;4&#125;/</span>;</div><div class="line"><span class="keyword">if</span> (pattern.test(text))&#123;</div><div class="line">	alert(<span class="string">"The pattern was matched."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>test()方法常用于验证用户输入是否符合规范。</p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>比如toLocaleString()和toString()方法，返回正则表达式的字面量。<br>valueOf()则返回自身。<br>match方法不知道为什么没写，同exec()返回的也是数组，但是执行的是全局匹配。</p>
+<h4 id="一些常用的正则表达式（持续更新）"><a href="#一些常用的正则表达式（持续更新）" class="headerlink" title="一些常用的正则表达式（持续更新）"></a>一些常用的正则表达式（持续更新）</h4><p>实现replaceAll()方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceAll</span>(<span class="params">str</span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(str != <span class="literal">null</span>)</div><div class="line">	str = str.replace(<span class="regexp">/word/g</span>,<span class="string">"Excel"</span>)</div><div class="line">	<span class="keyword">return</span> str;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(replaceAll(<span class="string">"wordwordwordword"</span>));</div></pre></td></tr></table></figure></p>
+<p>邮箱验证的正则<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加号表示匹配一个或多个在它之前的字符</span></div><div class="line"><span class="keyword">var</span> p = <span class="regexp">/^([a-zA-z0-9/-])+@([a-zA-Z0-9/-])+(.[a-zA-Z0-9/-])+$/</span></div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"usey95@qq.com"</span>)); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"usey95"</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>验证手机号的正则<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p = <span class="regexp">/^1[3|5|8][0-9]\d&#123;4,8&#125;$/</span>;</div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"13055556666"</span>)); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(p.test(<span class="string">"23055556666"</span>)); <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;RegExp&quot;&gt;&lt;a href=&quot;#RegExp&quot; class=&quot;headerlink&quot; title=&quot;RegExp&quot;&gt;&lt;/a&gt;RegExp&lt;/h3&gt;&lt;p&gt;ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正&lt;br&gt;则表达式。&lt;br&gt;var expression = / pattern / flags ;&lt;br&gt;pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;g 全局，并非一经匹配马上停止&lt;/li&gt;
+&lt;li&gt;i 忽略大小写&lt;/li&gt;
+&lt;li&gt;m 多行匹配&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>11/3一些悬而未决的小问题</title>
     <link href="http://yoursite.com/2016/11/03/work-6/"/>
     <id>http://yoursite.com/2016/11/03/work-6/</id>
     <published>2016-11-03T03:01:25.000Z</published>
-    <updated>2016-11-03T04:09:53.567Z</updated>
+    <updated>2016-11-05T02:25:51.629Z</updated>
     
     <content type="html"><![CDATA[<p>对一个数组Array = [2,1,3,[2,1,3[2,1,3]]]，进行排序，我觉得我笔试的时候应该是写对了的，但是昨天面试官问我的时候没有底气仔细看。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">Array</span> = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,[<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,[<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>]]];</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">		a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</div><div class="line">			<span class="keyword">if</span>(item <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</div><div class="line">				fun(item);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		<span class="keyword">return</span> a.sort();</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(fun(<span class="built_in">Array</span>));</div></pre></td></tr></table></figure></p>
-<p>对一个字符串进行首字母大写操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"hello world"</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> arr = str.split(<span class="string">" "</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)</div><div class="line">		&#123;</div><div class="line">			arr[i] = arr[i].replace(arr[i][<span class="number">0</span>],arr[i][<span class="number">0</span>].toUpperCase());</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> arr.join(<span class="string">" "</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(change(s)); <span class="comment">//Hello World</span></div></pre></td></tr></table></figure></p>
+<p>对一个字符串进行首字母大写操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"hello world"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> arr = str.split(<span class="string">" "</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)</div><div class="line">	&#123;</div><div class="line">		arr[i] = arr[i].replace(arr[i][<span class="number">0</span>],arr[i][<span class="number">0</span>].toUpperCase());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(change(s)); <span class="comment">//Hello World</span></div></pre></td></tr></table></figure></p>
+<p>positon属性列举：<a href="http://www.w3school.com.cn/cssref/pr_class_position.asp" target="_blank" rel="external">w3c</a></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>absolute</td>
+<td>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>生成相对定位的元素，相对于其正常位置进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</td>
+</tr>
+<tr>
+<td>static    默认值。</td>
+<td>没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>规定应该从父元素继承 position 属性的值。</td>
+</tr>
+</tbody>
+</table>
+<p>csrf：跨站请求伪造防护(在connect中间件看到的)<br>跨站请求伪造（CSRF）利用站点对浏览器的信任漏洞进行攻击。经过你的程序认证的用户访问攻击者创建或攻陷的站点时，这种站点会在用户不知情的情况下代表用户向你的程序发起请求，从而实施攻击。<br>这是一种复杂的攻击，所以我们来举例说明。假定在你的程序中，请求DELETE /account会导致用户的账号被销毁（尽管只有已登录用户可以发起请求）。而用户此时又恰好访问了一个不能防护CSRF的论坛。攻击者可以提交一段脚本发起DELETE /account 请求，销毁用户的账号。对于你的程序来说，这是很糟糕的状况，csrf()中间件可以帮你防护这样的攻击。csrf()会生成一个包含24个字符的唯一ID，认证令牌，作为req.session._csrf附到用户的会话上。然后这个令牌会作为隐藏的输入控件_csrf出现在表单中，CSRF在提交时会验证这个令牌。这个过程每次交互都会执行。</p>
 ]]></content>
     
     <summary type="html">
@@ -105,7 +185,7 @@
     <link href="http://yoursite.com/2016/10/30/work-5/"/>
     <id>http://yoursite.com/2016/10/30/work-5/</id>
     <published>2016-10-30T06:23:22.000Z</published>
-    <updated>2016-11-01T07:09:02.869Z</updated>
+    <updated>2016-11-05T02:07:52.931Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>网络体系结构</li>
@@ -203,11 +283,11 @@
 <ul>
 <li>常见的HTTP报头（在百度随便搜了一个东西）</li>
 </ul>
-<p><strong>General</strong><br>//请求url<br>Request URL:<a href="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300" target="_blank" rel="external">https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300</a><br>//请求方式<br>Request Method:GET<br>//状态码<br>Status Code:200 OK<br>//远程地址<br>Remote Address:123.138.46.33:443<br><strong>响应头</strong><br>Response Headers<br>//HTTP状态<br>HTTP/1.1 200 OK<br>//服务器<br>Server: bfe/1.0.8.13-sslpool-patch<br>//时间<br>Date: Sun, 30 Oct 2016 12:06:59 GMT<br>//类型<br>Content-Type: image/jpeg<br>//响应实体大小，比如这个图片大小为8K<br>Content-Length: 8682<br>Connection: keep-alive<br>ETag: e1139bc1b225c6b15cf5f557191a3b5d<br>Last-Modified: Thu, 01 Jan 1970 00:00:00 GMT<br>Expires: Sat, 05 Nov 2016 15:13:26 GMT<br>Age: 2098413<br>//缓存控制<br>Cache-Control: max-age=2628000<br>//支持range请求<br>Accept-Ranges:bytes<br><strong>请求头</strong><br>Request Headers<br>//GET URL<br>GET /6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300 HTTP/1.1<br>//服务器<br>Host: ss0.baidu.com<br>//连接<br>Connection: keep-alive<br>//客户端信息<br>User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36<br>//客户端接收的内容<br>Accept: image/webp,image/*,*/*;q=0.8<br>//重定向<br>Referer: <a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv\_bp=0&amp;rsv\_idx=1&amp;tn=baidu&amp;wd=13&amp;rsv\_pq=abb5ee1400056681&amp;rsv\_t=14aeOKfIZAsgYDBJrtjMbN3S9J4OR7Qp3t%2FlNCyjfqRxD25VH0wN%2FGIOF8w&amp;rqlang=cn&amp;rsv\_enter=0&amp;rsv\_sug3=3&amp;rsv\_sug1=1&amp;rsv\_sug7=100&amp;inputT=42311&amp;rsv_sug4=42312" target="_blank" rel="external">https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv\_bp=0&amp;rsv\_idx=1&amp;tn=baidu&amp;wd=13&amp;rsv\_pq=abb5ee1400056681&amp;rsv\_t=14aeOKfIZAsgYDBJrtjMbN3S9J4OR7Qp3t%2FlNCyjfqRxD25VH0wN%2FGIOF8w&amp;rqlang=cn&amp;rsv\_enter=0&amp;rsv\_sug3=3&amp;rsv\_sug1=1&amp;rsv\_sug7=100&amp;inputT=42311&amp;rsv_sug4=42312</a><br>//编码<br>Accept-Encoding: gzip, deflate, sdch, br<br>//语言<br>Accept-Language: zh-CN,zh;q=0.8<br>//Cookie<br>Cookie: BAIDUID=9F5B7C3C7D2E52A2B3A65EFD8B03C636:FG=1; PSTM=1477206449; BIDUPSID=70907222E1DDE291452052388B6D9D0F; pgv_pvi=7821050880; PSINO=2; H_PS_PSSID=1456_18241_21083_21455_21406_21394_21377_21190_20718</p>
+<p><strong>General</strong><br>//请求url<br>Request URL:<a href="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300" target="_blank" rel="external">https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300</a><br>//请求方式<br>Request Method:GET<br>//状态码<br>Status Code:200 OK<br>//远程地址<br>Remote Address:123.138.46.33:443<br><strong>响应头</strong><br>Response Headers<br>//HTTP状态<br>HTTP/1.1 200 OK<br>//服务器<br>Server: bfe/1.0.8.13-sslpool-patch<br>//时间<br>Date: Sun, 30 Oct 2016 12:06:59 GMT<br>//类型<br>Content-Type: image/jpeg<br>//响应实体大小，比如这个图片大小为8K<br>Content-Length: 8682<br>Connection: keep-alive<br>ETag: e1139bc1b225c6b15cf5f557191a3b5d<br>Last-Modified: Thu, 01 Jan 1970 00:00:00 GMT<br>Expires: Sat, 05 Nov 2016 15:13:26 GMT<br>Age: 2098413<br>//缓存控制<br>Cache-Control: max-age=2628000<br>//支持range请求<br>Accept-Ranges:bytes<br><strong>请求头</strong><br>Request Headers<br>//GET URL<br>GET /6ONWsjip0QIZ8tyhnq/it/u=3817578960,1334478084&amp;fm=58&amp;bpow=400&amp;bpoh=300 HTTP/1.1<br>//发出请求的页面所在的域<br>Host: ss0.baidu.com<br>//连接方式<br>Connection: keep-alive<br>//浏览器用户代理字符串<br>User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36<br>//客户端接收的内容<br>Accept: image/webp,image/*,*/*;q=0.8<br>//重定向<br>Referer: <a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv\_bp=0&amp;rsv\_idx=1&amp;tn=baidu&amp;wd=13&amp;rsv\_pq=abb5ee1400056681&amp;rsv\_t=14aeOKfIZAsgYDBJrtjMbN3S9J4OR7Qp3t%2FlNCyjfqRxD25VH0wN%2FGIOF8w&amp;rqlang=cn&amp;rsv\_enter=0&amp;rsv\_sug3=3&amp;rsv\_sug1=1&amp;rsv\_sug7=100&amp;inputT=42311&amp;rsv_sug4=42312" target="_blank" rel="external">https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv\_bp=0&amp;rsv\_idx=1&amp;tn=baidu&amp;wd=13&amp;rsv\_pq=abb5ee1400056681&amp;rsv\_t=14aeOKfIZAsgYDBJrtjMbN3S9J4OR7Qp3t%2FlNCyjfqRxD25VH0wN%2FGIOF8w&amp;rqlang=cn&amp;rsv\_enter=0&amp;rsv\_sug3=3&amp;rsv\_sug1=1&amp;rsv\_sug7=100&amp;inputT=42311&amp;rsv_sug4=42312</a><br>//编码<br>Accept-Encoding: gzip, deflate, sdch, br<br>//语言<br>Accept-Language: zh-CN,zh;q=0.8<br>//Cookie<br>Cookie: BAIDUID=9F5B7C3C7D2E52A2B3A65EFD8B03C636:FG=1; PSTM=1477206449; BIDUPSID=70907222E1DDE291452052388B6D9D0F; pgv_pvi=7821050880; PSINO=2; H_PS_PSSID=1456_18241_21083_21455_21406_21394_21377_21190_20718</p>
 <p>总结一下，HTTP报头包括general、request、response部分。</p>
 <ul>
 <li>general：URL、METHOD、状态码、地址</li>
-<li>request：GET URL、HOST、客户端信息、指定接收内容（类型、编码、语言等）、重定向、Cookie</li>
+<li>request：GET URL、HOST、浏览器代理、指定接收内容（类型、编码、语言等）、重定向、Cookie</li>
 <li><p>response：HTTP状态、服务器、时间、类型、响应实体大小</p>
 </li>
 <li><p>cookie，localstorage，sessionstorage，session，indexDB</p>
@@ -780,10 +860,10 @@
     <link href="http://yoursite.com/2016/10/13/algorithm-sort/"/>
     <id>http://yoursite.com/2016/10/13/algorithm-sort/</id>
     <published>2016-10-13T07:31:09.000Z</published>
-    <updated>2016-10-29T12:11:31.014Z</updated>
+    <updated>2016-11-04T01:03:41.965Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="常用排序算法"><a href="#常用排序算法" class="headerlink" title="常用排序算法"></a>常用排序算法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> SelectionSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		int min = i;</div><div class="line">		<span class="keyword">for</span>(int j = i + <span class="number">1</span>;j &lt; n - <span class="number">1</span>;j++)</div><div class="line">			<span class="keyword">if</span>(a[min] &gt; a[j]) min = j;</div><div class="line">		swap(a[min],a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法思想：对有n个元素的序列进行n-1趟排序，相邻元素逆序则交换。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> BubbleSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n<span class="number">-1</span>;i++)&#123;</div><div class="line">		<span class="comment">//改进算法，如果一趟未逆序则已经有序</span></div><div class="line">		<span class="comment">//bool exchange = true;</span></div><div class="line">		<span class="keyword">for</span>(int j = <span class="number">0</span>;j &lt; n-i<span class="number">-1</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(a[j + <span class="number">1</span>] &lt; a[j])&#123;</div><div class="line">				swap(a[j],a[j + <span class="number">1</span>]);</div><div class="line">				<span class="comment">//exchange = false;</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(exchange)&#123;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<h2 id="常用排序算法"><a href="#常用排序算法" class="headerlink" title="常用排序算法"></a>常用排序算法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> SelectionSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		int min = i;</div><div class="line">		<span class="keyword">for</span>(int j = i + <span class="number">1</span>;j &lt; n;j++)</div><div class="line">			<span class="keyword">if</span>(a[min] &gt; a[j]) min = j;</div><div class="line">		swap(a[min],a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法思想：对有n个元素的序列进行n-1趟排序，相邻元素逆序则交换。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> BubbleSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		<span class="comment">//改进算法，如果一趟未逆序则已经有序</span></div><div class="line">		<span class="comment">//bool exchange = true;</span></div><div class="line">		<span class="keyword">for</span>(int j = <span class="number">0</span>;j &lt; n - i - <span class="number">1</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(a[j + <span class="number">1</span>] &lt; a[j])&#123;</div><div class="line">				swap(a[j],a[j + <span class="number">1</span>]);</div><div class="line">				<span class="comment">//exchange = false;</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(exchange)&#123;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>算法思想：将数据插入已经排好序的有序数据中，本质上属于减治策略。</p>
 <blockquote>
 <p>关于减治策略：减治技术利用一个问题给定实例的解和同样问题较小的实例的解中的某种关系。一旦建立了这种关系，就可以采取递归手段。</p>
