@@ -87,18 +87,18 @@
 
 
 <meta name="description" content="位操作实现abs12345var num = -120;function abs(num) &amp;#123;	return num*(1-((num&amp;gt;&amp;gt;&amp;gt;31)&amp;lt;&amp;lt;1));&amp;#125;console.log(abs(num));//120
-递归实现数组求和123function sum(a,n) &amp;#123;	return (n===0)?0:sum(a[n-1],n-1">
+递归实现数组求和123function sum(a,n) &amp;#123;	return (n === 0)?0:sum(a,n - 1)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="飞鱼笔试以及零散总结">
 <meta property="og:url" content="http://yoursite.com/2016/10/20/work-1/index.html">
 <meta property="og:site_name" content="DEARPORK">
 <meta property="og:description" content="位操作实现abs12345var num = -120;function abs(num) &amp;#123;	return num*(1-((num&amp;gt;&amp;gt;&amp;gt;31)&amp;lt;&amp;lt;1));&amp;#125;console.log(abs(num));//120
-递归实现数组求和123function sum(a,n) &amp;#123;	return (n===0)?0:sum(a[n-1],n-1">
-<meta property="og:updated_time" content="2016-10-29T12:44:49.881Z">
+递归实现数组求和123function sum(a,n) &amp;#123;	return (n === 0)?0:sum(a,n - 1)">
+<meta property="og:updated_time" content="2016-11-15T11:25:16.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="飞鱼笔试以及零散总结">
 <meta name="twitter:description" content="位操作实现abs12345var num = -120;function abs(num) &amp;#123;	return num*(1-((num&amp;gt;&amp;gt;&amp;gt;31)&amp;lt;&amp;lt;1));&amp;#125;console.log(abs(num));//120
-递归实现数组求和123function sum(a,n) &amp;#123;	return (n===0)?0:sum(a[n-1],n-1">
+递归实现数组求和123function sum(a,n) &amp;#123;	return (n === 0)?0:sum(a,n - 1)">
 
 
 
@@ -342,7 +342,7 @@
 
       
         <h3 id="位操作实现abs"><a href="#位操作实现abs" class="headerlink" title="位操作实现abs"></a>位操作实现abs</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">-120</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> num*(<span class="number">1</span>-((num&gt;&gt;&gt;<span class="number">31</span>)&lt;&lt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(abs(num));<span class="comment">//120</span></div></pre></td></tr></table></figure>
-<h3 id="递归实现数组求和"><a href="#递归实现数组求和" class="headerlink" title="递归实现数组求和"></a>递归实现数组求和</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,n</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> (n===<span class="number">0</span>)?<span class="number">0</span>:sum(a[n<span class="number">-1</span>],n<span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="递归实现数组求和"><a href="#递归实现数组求和" class="headerlink" title="递归实现数组求和"></a>递归实现数组求和</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,n</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> (n === <span class="number">0</span>)?<span class="number">0</span>:sum(a,n - <span class="number">1</span>) + a[n - <span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="一个未解决的"><a href="#一个未解决的" class="headerlink" title="一个未解决的"></a>一个未解决的</h3><p>#define six 2*3 和#define six 2 * 3有没有区别？<br>暂时想不到</p>
 <h3 id="js加载"><a href="#js加载" class="headerlink" title="js加载"></a>js加载</h3><ul>
