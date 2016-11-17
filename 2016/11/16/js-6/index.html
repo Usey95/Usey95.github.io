@@ -68,12 +68,10 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="DEARPORK" type="application/atom+xml" />
@@ -88,16 +86,19 @@
 
 
 
-<meta name="description" content="For the heart is organ of fire.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="一、12345678var arr = [1,2,2,3,3,5];var res = [];for(var i = 0;i &amp;lt; arr.length;i++)&amp;#123;	if(arr.indexOf(arr[i]) == i)&amp;#123;		res.push(arr[i]);	&amp;#125;&amp;#125;console.log(res);
+二、12345678var arr = [1,2,2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组去重备忘">
+<meta property="og:url" content="http://yoursite.com/2016/11/16/js-6/index.html">
 <meta property="og:site_name" content="DEARPORK">
-<meta property="og:description" content="For the heart is organ of fire.">
-<meta property="og:updated_time" content="2016-10-12T09:22:11.532Z">
+<meta property="og:description" content="一、12345678var arr = [1,2,2,3,3,5];var res = [];for(var i = 0;i &amp;lt; arr.length;i++)&amp;#123;	if(arr.indexOf(arr[i]) == i)&amp;#123;		res.push(arr[i]);	&amp;#125;&amp;#125;console.log(res);
+二、12345678var arr = [1,2,2">
+<meta property="og:updated_time" content="2016-11-17T13:06:04.528Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="For the heart is organ of fire.">
+<meta name="twitter:title" content="js数组去重备忘">
+<meta name="twitter:description" content="一、12345678var arr = [1,2,2,3,3,5];var res = [];for(var i = 0;i &amp;lt; arr.length;i++)&amp;#123;	if(arr.indexOf(arr[i]) == i)&amp;#123;		res.push(arr[i]);	&amp;#125;&amp;#125;console.log(res);
+二、12345678var arr = [1,2,2">
 
 
 
@@ -118,16 +119,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/16/js-6/"/>
 
 
-  <title>
-  
-
-  
-    about | DEARPORK
-  
-</title>
+  <title> js数组去重备忘 | DEARPORK </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="en">
@@ -158,7 +153,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -271,9 +266,139 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js数组去重备忘
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-16T18:01:52+08:00" content="2016-11-16">
+              2016-11-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/16/js-6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/js-6/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/16/js-6/" class="leancloud_visitors" data-flag-title="js数组去重备忘">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <p>一、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> res = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(arr.indexOf(arr[i]) == i)&#123;</div><div class="line">		res.push(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
+<p>二、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> res = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(res.indexOf(arr[i]) == <span class="number">-1</span>)&#123;</div><div class="line">		res.push(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
+<p>三、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line">arr = arr.sort();</div><div class="line"><span class="keyword">var</span> res =[arr[<span class="number">0</span>]];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++)&#123;</div><div class="line">	<span class="keyword">if</span>( arr[i] !== res[res.length<span class="number">-1</span>])</div><div class="line">	&#123;</div><div class="line">		res.push(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
+<p>四、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> hash = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> res = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</div><div class="line">	<span class="keyword">var</span> item = arr[i];</div><div class="line">    <span class="keyword">var</span> key = <span class="keyword">typeof</span>(item) + item;<span class="comment">//区分字符串一和数字一</span></div><div class="line">    <span class="keyword">if</span> (hash[key] !== <span class="number">1</span>) &#123;</div><div class="line">      res.push(item);</div><div class="line">      hash[key] = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
+<p><a href="http://sentsin.com/web/63.html" target="_blank" rel="external">玉伯的博客</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/12/HackerRank-Algorithms爬行记录/" rel="next" title="HackerRank-Algorithms爬行记录">
+                <i class="fa fa-chevron-left"></i> HackerRank-Algorithms爬行记录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -284,8 +409,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="about/index.html"
-           data-title="about" data-url="http://yoursite.com/about/index.html">
+      <div class="ds-thread" data-thread-key="2016/11/16/js-6/"
+           data-title="js数组去重备忘" data-url="http://yoursite.com/2016/11/16/js-6/">
       </div>
     
   </div>
@@ -309,8 +434,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -389,6 +523,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -485,6 +630,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
