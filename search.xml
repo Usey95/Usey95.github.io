@@ -4,10 +4,9 @@
   
     
     <entry>
-      <title><![CDATA[关于一个大数求和]]></title>
+      <title><![CDATA[HackerRank小问题汇总]]></title>
       <url>http://yoursite.com/2016/11/22/js-7/</url>
-      <content type="html"><![CDATA[<h4 id="A-Very-Big-Sum"><a href="#A-Very-Big-Sum" class="headerlink" title="A Very Big Sum"></a>A Very Big Sum</h4><p>You are given an array of integers of size N. You need to print the sum of the elements in the array, keeping in mind that some of those integers may be quite large.</p>
-<p>Input Format</p>
+      <content type="html"><![CDATA[<h4 id="A-Very-Big-Sum"><a href="#A-Very-Big-Sum" class="headerlink" title="A Very Big Sum"></a>A Very Big Sum</h4><p>You are given an array of integers of size N. You need to print the sum of the elements in the array, keeping in mind that some of those integers may be quite large.<br><a id="more"></a><br>Input Format</p>
 <p>The first line of the input consists of an integer N. The next line contains  space-separated integers contained in the array.</p>
 <p>Output Format</p>
 <p>Print a single value equal to the sum of the elements in the array.</p>
@@ -15,7 +14,8 @@
 <p>5<br>1000000001 1000000002 1000000003 1000000004 1000000005</p>
 <p>Output</p>
 <p>5000000015</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="built_in">console</span>.log(arr.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr));</div><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="built_in">console</span>.log(arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> prev+cur;</div><div class="line">&#125;));</div><div class="line"><span class="comment">//</span></div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="built_in">console</span>.log(arr.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr));</div><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="built_in">console</span>.log(arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> prev+cur;</div><div class="line">&#125;));</div></pre></td></tr></table></figure>
+<h4 id="D11"><a href="#D11" class="headerlink" title="D11"></a>D11</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sum = sum.sort(<span class="function"><span class="keyword">function</span>(<span class="params">val1,val2</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> val1 - val2;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(sum[<span class="number">15</span>]); <span class="comment">//[ 0, 2, 3, 3, 4, 4, 6, 6, 7, 7, 8, 8, 9, 10, 14, 19 ]</span></div><div class="line"><span class="comment">//如果这样写，会被当成字符串处理，不知道为什么。</span></div><div class="line">sum = sum.sort();</div><div class="line"><span class="built_in">console</span>.log(sum);<span class="comment">//[ 0, 10, 14, 19, 2, 3, 3, 4, 4, 6, 6, 7, 7, 8, 8, 9 ]</span></div></pre></td></tr></table></figure>]]></content>
     </entry>
     
     <entry>
