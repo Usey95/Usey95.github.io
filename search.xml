@@ -4,6 +4,18 @@
   
     
     <entry>
+      <title><![CDATA[如何统计一个页面所有元素]]></title>
+      <url>http://yoursite.com/2016/12/17/js-8/</url>
+      <content type="html"><![CDATA[<h3 id="源自贺老的live"><a href="#源自贺老的live" class="headerlink" title="源自贺老的live"></a>源自贺老的live</h3><p>如何统计一个页面所有的元素？</p>
+<ul>
+<li>getElementsByTagName(“*”)<br>获得一个<a href="http://www.html-js.com/article/1619" target="_blank" rel="external">类数组对象</a>，然后进行去重。</li>
+<li>querySelectorAll(“*”)<br>同上。</li>
+<li>黑科技<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Set</span>($$(<span class="string">"*"</span>).map(<span class="function"><span class="params">e</span> =&gt;</span> e.tagName)).size;</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[HackerRank小问题汇总]]></title>
       <url>http://yoursite.com/2016/11/22/js-7/</url>
       <content type="html"><![CDATA[<h4 id="A-Very-Big-Sum"><a href="#A-Very-Big-Sum" class="headerlink" title="A Very Big Sum"></a>A Very Big Sum</h4><p>You are given an array of integers of size N. You need to print the sum of the elements in the array, keeping in mind that some of those integers may be quite large.<br><a id="more"></a><br>Input Format</p>

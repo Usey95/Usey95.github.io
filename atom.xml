@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-24T05:34:57.894Z</updated>
+  <updated>2016-12-17T03:25:30.809Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何统计一个页面所有元素</title>
+    <link href="http://yoursite.com/2016/12/17/js-8/"/>
+    <id>http://yoursite.com/2016/12/17/js-8/</id>
+    <published>2016-12-17T02:38:04.000Z</published>
+    <updated>2016-12-17T03:25:30.809Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="源自贺老的live"><a href="#源自贺老的live" class="headerlink" title="源自贺老的live"></a>源自贺老的live</h3><p>如何统计一个页面所有的元素？</p>
+<ul>
+<li>getElementsByTagName(“*”)<br>获得一个<a href="http://www.html-js.com/article/1619" target="_blank" rel="external">类数组对象</a>，然后进行去重。</li>
+<li>querySelectorAll(“*”)<br>同上。</li>
+<li>黑科技<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Set</span>($$(<span class="string">"*"</span>).map(<span class="function"><span class="params">e</span> =&gt;</span> e.tagName)).size;</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;源自贺老的live&quot;&gt;&lt;a href=&quot;#源自贺老的live&quot; class=&quot;headerlink&quot; title=&quot;源自贺老的live&quot;&gt;&lt;/a&gt;源自贺老的live&lt;/h3&gt;&lt;p&gt;如何统计一个页面所有的元素？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;getElementsByT
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>HackerRank小问题汇总</title>
