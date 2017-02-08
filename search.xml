@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[GET和POST的区别]]></title>
-      <url>http://dearpork.com/2017/01/04/get-post/</url>
+      <url>usey95.github.io/2017/01/04/get-post/</url>
       <content type="html"><![CDATA[<h3 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h3><p>来自W3C</p>
 <ul>
 <li>GET在浏览器回退时是无害的，而POST会再次提交请求。</li>
@@ -34,7 +34,7 @@
     
     <entry>
       <title><![CDATA[如何统计一个页面所有元素]]></title>
-      <url>http://dearpork.com/2016/12/17/js-8/</url>
+      <url>usey95.github.io/2016/12/17/js-8/</url>
       <content type="html"><![CDATA[<h3 id="源自贺老的live"><a href="#源自贺老的live" class="headerlink" title="源自贺老的live"></a>源自贺老的live</h3><p>如何统计一个页面所有的元素？</p>
 <ul>
 <li>getElementsByTagName(“*”)<br>获得一个<a href="http://www.html-js.com/article/1619" target="_blank" rel="external">类数组对象</a>，然后进行去重。</li>
@@ -46,7 +46,7 @@
     
     <entry>
       <title><![CDATA[HackerRank小问题汇总]]></title>
-      <url>http://dearpork.com/2016/11/22/js-7/</url>
+      <url>usey95.github.io/2016/11/22/js-7/</url>
       <content type="html"><![CDATA[<h4 id="A-Very-Big-Sum"><a href="#A-Very-Big-Sum" class="headerlink" title="A Very Big Sum"></a>A Very Big Sum</h4><p>You are given an array of integers of size N. You need to print the sum of the elements in the array, keeping in mind that some of those integers may be quite large.<br><a id="more"></a><br>Input Format</p>
 <p>The first line of the input consists of an integer N. The next line contains  space-separated integers contained in the array.</p>
 <p>Output Format</p>
@@ -61,7 +61,7 @@
     
     <entry>
       <title><![CDATA[js数组去重备忘]]></title>
-      <url>http://dearpork.com/2016/11/16/js-6/</url>
+      <url>usey95.github.io/2016/11/16/js-6/</url>
       <content type="html"><![CDATA[<p>一、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> res = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(arr.indexOf(arr[i]) == i)&#123;</div><div class="line">		res.push(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
 <p>二、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> res = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)&#123;</div><div class="line">	<span class="keyword">if</span>(res.indexOf(arr[i]) == <span class="number">-1</span>)&#123;</div><div class="line">		res.push(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
 <p>三、<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">5</span>];</div><div class="line">arr = arr.sort();</div><div class="line"><span class="keyword">var</span> res =[arr[<span class="number">0</span>]];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++)&#123;</div><div class="line">	<span class="keyword">if</span>( arr[i] !== res[res.length<span class="number">-1</span>])</div><div class="line">	&#123;</div><div class="line">		res.push(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(res);</div></pre></td></tr></table></figure></p>
@@ -72,7 +72,7 @@
     
     <entry>
       <title><![CDATA[HackerRank-Algorithms爬行记录]]></title>
-      <url>http://dearpork.com/2016/11/12/HackerRank-Algorithms%E7%88%AC%E8%A1%8C%E8%AE%B0%E5%BD%95/</url>
+      <url>usey95.github.io/2016/11/12/HackerRank-Algorithms%E7%88%AC%E8%A1%8C%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<h4 id="ACM-ICPC-Team"><a href="#ACM-ICPC-Team" class="headerlink" title="ACM ICPC Team"></a>ACM ICPC Team</h4><p>You are given a list of N people who are attending ACM-ICPC World Finals. Each of them are either well versed in a topic or they are not. Find out the maximum number of topics a 2-person team can know. And also find out how many teams can know that maximum number of topics.</p>
 <a id="more"></a>
 <p>Note Suppose a, b, and c are three different people, then (a,b) and (b,c) are counted as two different teams.</p>
@@ -104,7 +104,7 @@
     
     <entry>
       <title><![CDATA[HackerRank-LinkList爬行记录]]></title>
-      <url>http://dearpork.com/2016/11/12/HackerRank-LinkList%E7%88%AC%E8%A1%8C%E8%AE%B0%E5%BD%95/</url>
+      <url>usey95.github.io/2016/11/12/HackerRank-LinkList%E7%88%AC%E8%A1%8C%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<h4 id="Print-the-Elements-of-a-Linked-List"><a href="#Print-the-Elements-of-a-Linked-List" class="headerlink" title="Print the Elements of a Linked List"></a>Print the Elements of a Linked List</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> Print(Node *head)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span>(head!=NULL) &#123;</div><div class="line">        cout &lt;&lt; head-&gt;data &lt;&lt; endl; </div><div class="line">        head=head-&gt;next; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="Insert-a-Node-at-the-Tail-of-a-Linked-List"><a href="#Insert-a-Node-at-the-Tail-of-a-Linked-List" class="headerlink" title="Insert a Node at the Tail of a Linked List"></a>Insert a Node at the Tail of a Linked List</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Node* Insert(Node *head,int data)</div><div class="line">&#123;</div><div class="line">	Node *temp=<span class="keyword">new</span> Node();</div><div class="line">	temp-&gt;data = data;</div><div class="line">	temp-&gt;next = NULL;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(head == NULL)&#123;</div><div class="line">  		head = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">  		Node *p;</div><div class="line">  		p = head;</div><div class="line">  		<span class="keyword">while</span>(p-&gt;next != NULL)</div><div class="line">      	p = p-&gt;next;</div><div class="line">  		p-&gt;next = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span>(head);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -119,7 +119,7 @@
     
     <entry>
       <title><![CDATA[js引用类型--RegExp]]></title>
-      <url>http://dearpork.com/2016/11/05/js-5/</url>
+      <url>usey95.github.io/2016/11/05/js-5/</url>
       <content type="html"><![CDATA[<h3 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h3><p>ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl 的语法，就可以创建一个正<br>则表达式。<br>var expression = / pattern / flags ;<br>pattern部分可以是任意正则表达式，其中遇到元字符需要转义，可以带一个或多个标志。</p>
 <ul>
 <li>g 全局，并非一经匹配马上停止</li>
@@ -148,7 +148,7 @@
     
     <entry>
       <title><![CDATA[11/3一些悬而未决的小问题]]></title>
-      <url>http://dearpork.com/2016/11/03/work-6/</url>
+      <url>usey95.github.io/2016/11/03/work-6/</url>
       <content type="html"><![CDATA[<p>对一个数组Array = [2,1,3,[2,1,3[2,1,3]]]，进行排序，我觉得我笔试的时候应该是写对了的，但是昨天面试官问我的时候没有底气仔细看。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">Array</span> = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,[<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,[<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>]]];</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">		a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</div><div class="line">			<span class="keyword">if</span>(item <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</div><div class="line">				fun(item);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		<span class="keyword">return</span> a.sort();</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log(fun(<span class="built_in">Array</span>));</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>对一个字符串进行首字母大写操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"hello world"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> arr = str.split(<span class="string">" "</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length;i++)</div><div class="line">	&#123;</div><div class="line">		arr[i] = arr[i].replace(arr[i][<span class="number">0</span>],arr[i][<span class="number">0</span>].toUpperCase());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(change(s)); <span class="comment">//Hello World</span></div></pre></td></tr></table></figure></p>
@@ -189,7 +189,7 @@
     
     <entry>
       <title><![CDATA[js继承]]></title>
-      <url>http://dearpork.com/2016/10/31/js-4/</url>
+      <url>usey95.github.io/2016/10/31/js-4/</url>
       <content type="html"><![CDATA[<h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>突然想起来写继承是因为前天看到一个面试题</p>
 <blockquote>
 <p>写个Animal类，有个Cat类继承它，要求新建一个Cat的实例，可以调用catch方法输出自己的名字”大白的猫”</p>
@@ -230,7 +230,7 @@
     
     <entry>
       <title><![CDATA[http相关]]></title>
-      <url>http://dearpork.com/2016/10/30/work-5/</url>
+      <url>usey95.github.io/2016/10/30/work-5/</url>
       <content type="html"><![CDATA[<ul>
 <li>网络体系结构</li>
 </ul>
@@ -344,7 +344,7 @@
     
     <entry>
       <title><![CDATA[10/30零碎问题]]></title>
-      <url>http://dearpork.com/2016/10/30/work-4/</url>
+      <url>usey95.github.io/2016/10/30/work-4/</url>
       <content type="html"><![CDATA[<h3 id="js内置排序问题"><a href="#js内置排序问题" class="headerlink" title="js内置排序问题"></a>js内置排序问题</h3><ul>
 <li>sort接受一个函数为参数，这个函数作为比较的依据。</li>
 <li>javascript的sort方法是使用了优化过的快速排序算法来实现的。以V8引擎为例，具体的优化手段有：小数组（小于10项）采用插入排序提升效率，一般数组采用三数取中获得基准元素。</li>
@@ -359,7 +359,7 @@
     
     <entry>
       <title><![CDATA[续10/27]]></title>
-      <url>http://dearpork.com/2016/10/29/work-3/</url>
+      <url>usey95.github.io/2016/10/29/work-3/</url>
       <content type="html"><![CDATA[<h3 id="续上篇"><a href="#续上篇" class="headerlink" title="续上篇"></a>续上篇</h3><ul>
 <li>输入两个链表，找到他们的第一个公共节点。（说实话回来查的时候才知道什么意思。。）</li>
 </ul>
@@ -419,7 +419,7 @@
     
     <entry>
       <title><![CDATA[10/27笔试总结]]></title>
-      <url>http://dearpork.com/2016/10/28/work-2/</url>
+      <url>usey95.github.io/2016/10/28/work-2/</url>
       <content type="html"><![CDATA[<h3 id="某音乐公共试题"><a href="#某音乐公共试题" class="headerlink" title="某音乐公共试题"></a>某音乐公共试题</h3><p>不小心发多了一份给我。。。</p>
 <ul>
 <li>C++中什么时候用const？</li>
@@ -540,7 +540,7 @@
     
     <entry>
       <title><![CDATA[闭包]]></title>
-      <url>http://dearpork.com/2016/10/25/js-3/</url>
+      <url>usey95.github.io/2016/10/25/js-3/</url>
       <content type="html"><![CDATA[<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
 </blockquote>
@@ -575,7 +575,7 @@
     
     <entry>
       <title><![CDATA[飞鱼笔试以及零散总结]]></title>
-      <url>http://dearpork.com/2016/10/20/work-1/</url>
+      <url>usey95.github.io/2016/10/20/work-1/</url>
       <content type="html"><![CDATA[<h3 id="位操作实现abs"><a href="#位操作实现abs" class="headerlink" title="位操作实现abs"></a>位操作实现abs</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">-120</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> num*(<span class="number">1</span>-((num&gt;&gt;&gt;<span class="number">31</span>)&lt;&lt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(abs(num));<span class="comment">//120</span></div></pre></td></tr></table></figure>
 <h3 id="递归实现数组求和"><a href="#递归实现数组求和" class="headerlink" title="递归实现数组求和"></a>递归实现数组求和</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,n</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> (n === <span class="number">0</span>)?<span class="number">0</span>:sum(a,n - <span class="number">1</span>) + a[n - <span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -599,7 +599,7 @@
     
     <entry>
       <title><![CDATA[js引用类型--Function]]></title>
-      <url>http://dearpork.com/2016/10/19/js-2/</url>
+      <url>usey95.github.io/2016/10/19/js-2/</url>
       <content type="html"><![CDATA[<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><blockquote>
 <p>今天总结js引用类型Function，标准依然是ECMA5。</p>
 </blockquote>
@@ -644,7 +644,7 @@
     
     <entry>
       <title><![CDATA[js引用类型--Array]]></title>
-      <url>http://dearpork.com/2016/10/18/js-1/</url>
+      <url>usey95.github.io/2016/10/18/js-1/</url>
       <content type="html"><![CDATA[<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><blockquote>
 <p>今天上课总结的js引用类型Array，标准是ECMA5，至于为什么，因为我看的书就是讲ECMA5的啊。</p>
 </blockquote>
@@ -705,7 +705,7 @@
     
     <entry>
       <title><![CDATA[多余部分省略为点点点]]></title>
-      <url>http://dearpork.com/2016/10/17/css-1/</url>
+      <url>usey95.github.io/2016/10/17/css-1/</url>
       <content type="html"><![CDATA[<h2 id="多余部分省略解决方案"><a href="#多余部分省略解决方案" class="headerlink" title="多余部分省略解决方案"></a>多余部分省略解决方案</h2><p>今天笔试勤智数码遇到的问题，没有答出来，回来总结一下。</p>
 <h3 id="单行"><a href="#单行" class="headerlink" title="单行"></a>单行</h3><p>CSS就能实现，挺简单的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.test&#123;</div><div class="line">		<span class="attr">width</span>: <span class="number">50</span>px;</div><div class="line">		overflow: hidden;</div><div class="line">		text-overflow: ellipsis;</div><div class="line">		white-space: nowrap;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -723,7 +723,7 @@
     
     <entry>
       <title><![CDATA[一些排序算法]]></title>
-      <url>http://dearpork.com/2016/10/13/algorithm-sort/</url>
+      <url>usey95.github.io/2016/10/13/algorithm-sort/</url>
       <content type="html"><![CDATA[<h2 id="常用排序算法"><a href="#常用排序算法" class="headerlink" title="常用排序算法"></a>常用排序算法</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>算法思想：对n个元素的序列进行n-1趟的排序。第一趟排序对序列进行从头到尾的扫描，找到最小的元素与第一个元素交换，第二趟排序对序列从第二个元素起到序列尾扫描，找到最小元素与第二个元素交换，以此类推。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> SelectionSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		int min = i;</div><div class="line">		<span class="keyword">for</span>(int j = i + <span class="number">1</span>;j &lt; n;j++)</div><div class="line">			<span class="keyword">if</span>(a[min] &gt; a[j]) min = j;</div><div class="line">		swap(a[min],a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>算法思想：对有n个元素的序列进行n-1趟排序，相邻元素逆序则交换。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> BubbleSort(int a[n])&#123;</div><div class="line">	<span class="keyword">for</span>(int i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)&#123;</div><div class="line">		<span class="comment">//改进算法，如果一趟未逆序则已经有序</span></div><div class="line">		<span class="comment">//bool exchange = true;</span></div><div class="line">		<span class="keyword">for</span>(int j = <span class="number">0</span>;j &lt; n - i - <span class="number">1</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>(a[j + <span class="number">1</span>] &lt; a[j])&#123;</div><div class="line">				swap(a[j],a[j + <span class="number">1</span>]);</div><div class="line">				<span class="comment">//exchange = false;</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(exchange)&#123;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>算法思想：将数据插入已经排好序的有序数据中，本质上属于减治策略。</p>
@@ -820,7 +820,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://dearpork.com/2016/10/12/hello-world/</url>
+      <url>usey95.github.io/2016/10/12/hello-world/</url>
       <content type="html"><![CDATA[<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。</p>
 <a id="more"></a>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>昨天4399的面试经历让我意识到企业需要的应届生是什么样子的，平心而论玩轮子十分简单，语言基础还是要好好打，不要下次突然被问到指针和引用的区别一脸懵逼。</p>
