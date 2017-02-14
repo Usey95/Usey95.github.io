@@ -1173,30 +1173,4 @@
     
   </entry>
   
-  <entry>
-    <title>Hello World</title>
-    <link href="usey95.github.io/2016/10/12/hello-world/"/>
-    <id>usey95.github.io/2016/10/12/hello-world/</id>
-    <published>2016-10-12T05:43:07.758Z</published>
-    <updated>2016-10-15T09:02:23.209Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。</p>
-<a id="more"></a>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>昨天4399的面试经历让我意识到企业需要的应届生是什么样子的，平心而论玩轮子十分简单，语言基础还是要好好打，不要下次突然被问到指针和引用的区别一脸懵逼。</p>
-<p>纪念一下猝不及防让写的二分查找，由于脑袋一片空白写了一个递归，回家发现居然写对了，感觉自己还是有一点….天赋？不过也是时候把常用算法搞一遍了。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">BinarySearchRecursion</span><span class="params">(<span class="keyword">int</span> arry[],<span class="keyword">int</span> value,<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(low &gt; high)</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;</div><div class="line">    <span class="keyword">if</span>(arry[mid] == value)</div><div class="line">        <span class="keyword">return</span> mid;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(value &lt; arry[mid])</div><div class="line">        <span class="keyword">return</span>    BinarySearchRecursion(arry,value,low,mid - <span class="number">1</span>);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span>    BinarySearchRecursion(arry,value,mid + <span class="number">1</span>,high);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>看了一个下午又瞎又饿，刚开始用MD，感觉还行，插件将后续装上。<br>路漫漫其修远兮~</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Getting-Started&quot;&gt;&lt;a href=&quot;#Getting-Started&quot; class=&quot;headerlink&quot; title=&quot;Getting Started&quot;&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;&lt;h3 id=&quot;反思&quot;&gt;&lt;a href=&quot;#反思&quot; class=&quot;headerlink&quot; title=&quot;反思&quot;&gt;&lt;/a&gt;反思&lt;/h3&gt;&lt;p&gt;过去的一两个月一直在各种笔试、面试中疲于奔命，有喜有忧，情绪起伏不定，想做的太多以至于常常四处尝试，然而发现知道的越多不知道的就越多，今天忙了半天时间开启了Hexo的大门，想起先前无来由的膨胀觉得十分幽默。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日常" scheme="usey95.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
 </feed>
