@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[2-16]]></title>
+      <url>usey95.github.io/2017/02/16/2-16/</url>
+      <content type="html"><![CDATA[<p>写聊天室的时候遇到一个哲学问题：如果用数据库保存聊天记录，似乎好像可以不用socket就实现聊天功能……</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[GET和POST的区别]]></title>
       <url>usey95.github.io/2017/01/04/get-post/</url>
       <content type="html"><![CDATA[<h3 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h3><p>来自W3C</p>

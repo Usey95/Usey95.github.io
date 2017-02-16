@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="usey95.github.io/"/>
-  <updated>2017-01-04T09:11:33.088Z</updated>
+  <updated>2017-02-16T06:44:39.334Z</updated>
   <id>usey95.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2-16</title>
+    <link href="usey95.github.io/2017/02/16/2-16/"/>
+    <id>usey95.github.io/2017/02/16/2-16/</id>
+    <published>2017-02-16T06:42:46.000Z</published>
+    <updated>2017-02-16T06:44:39.334Z</updated>
+    
+    <content type="html"><![CDATA[<p>写聊天室的时候遇到一个哲学问题：如果用数据库保存聊天记录，似乎好像可以不用socket就实现聊天功能……</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写聊天室的时候遇到一个哲学问题：如果用数据库保存聊天记录，似乎好像可以不用socket就实现聊天功能……&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>GET和POST的区别</title>
